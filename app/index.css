@@ -1,0 +1,43 @@
+.button {
+      color: var(--white);
+      background-image: linear-gradient(#000, #292929);
+      border: 1px solid #000;
+      border-radius: 12px;
+      padding: 22px 54px;
+      font-family: Brockmann Webfont, sans-serif;
+      font-size: 17px;
+      transition: box-shadow .6s, background-color .6s;
+      box-shadow: 0 2px 2px rgba(0, 0, 0, .31), inset 0 2px 1px rgba(255, 255, 255, .5);
+    }
+
+
+
+    .logo-marquee__wrapper {
+      outline-offset: 0px;
+      perspective-origin: 50%;
+      transform-origin: 0%;
+      background-color: #000;
+      background-image: linear-gradient(#000, #292929);
+      border-radius: 1000px;
+      outline: 1px solid #000;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 24px;
+      padding-bottom: 24px;
+      overflow: hidden;
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.31), inset 0 2px 1px rgba(255, 255, 255, 0.5);
+      /* box-shadow: 1px 9px 12px rgba(0, 0, 0, .31), 0 20px 13px rgba(0, 0, 0, .14), inset 0 2px 1px rgba(255, 255, 255, .5); */
+  }
+
+
+
+  .nav-menu-2 {
+    background-image: linear-gradient(#000, #292929);
+    border: 1px solid #000;
+    border-radius: 100vw;
+    align-items: stretch;
+    display: flex;
+    box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .27), 0 10px 20px 1px rgba(0, 0, 0, .2), inset 0 2px 1px rgba(255, 255, 255, .5);
+}
+  
