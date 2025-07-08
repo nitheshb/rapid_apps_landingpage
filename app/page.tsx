@@ -14,6 +14,10 @@ import { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 import AppStoreBadges from "./AppStoreBadges";
 import RapidAppsSection from "./RapidAppsSection";
+import RapidAppsHeader from "./RapidAppsHeader";
+import MobileAppMissionBox from "./MobileAppMissionBox";
+import IndustryShowcase from "./IndustryShowcase";
+import ReviewSection from "./ReviewSection";
 
 export default function Home() {
 
@@ -39,6 +43,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen w-full overflow-x-hidden">
+
+      {/** Header */}
+      {/* <RapidAppsHeader /> */}
+      
       {/* Background Container */}
       <div 
         className="
@@ -127,17 +135,18 @@ export default function Home() {
 
         <HeroParallax products={products}></HeroParallax>
       </section>
-
-
-
           </motion.div>
-
-
             <DesignLandingSection />
-            <AppStoreBadges />
+            <MobileAppMissionBox />
+            <IndustryShowcase/>
+            <ReviewSection/>
+            <div id="services">
             <DesignJoyLanding />
-
-            <RapidAppsSection />
+            </div>
+            <AppStoreBadges />
+            <div id="rapid-apps">
+              <RapidAppsSection />
+            </div>
 
           </div>
         </div>

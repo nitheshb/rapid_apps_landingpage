@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import Button from "./Button";
+import Tag from "./Tag";
 import { motion } from "framer-motion";
 
 // Portfolio Images
@@ -19,22 +19,21 @@ import line from "./images/line.svg";
 const imageUrls = [d1, d2, d3, d4, d5, d6];
 
 const categories = [
-  { name: "iOS Development", color: "bg-blue-500" },
-  { name: "Android Development", color: "bg-green-500" },
-  { name: "Flutter Apps", color: "bg-purple-500" },
-  { name: "React Native", color: "bg-yellow-500" },
-  { name: "UI/UX Design", color: "bg-pink-400" },
-  { name: "App Prototyping", color: "bg-indigo-400" },
-  { name: "Backend APIs", color: "bg-emerald-500" },
-  { name: "Firebase Integration", color: "bg-orange-500" },
-  { name: "Push Notifications", color: "bg-teal-500" },
-  { name: "App Store Deployment", color: "bg-red-500" },
-  { name: "+ more", color: "bg-gray-300 text-black" },
+  { text: "iOS Development", gradient: "linear-gradient(#2563EB, #1D4ED8)", borderColor: "#1D4ED8" },
+  { text: "Android Development", gradient: "linear-gradient(#22C55E, #16A34A)", borderColor: "#16A34A" },
+  { text: "Flutter Apps", gradient: "linear-gradient(#A855F7, #9333EA)", borderColor: "#9333EA" },
+  { text: "React Native", gradient: "linear-gradient(#FACC15, #EAB308)", borderColor: "#EAB308" },
+  { text: "UI/UX Design", gradient: "linear-gradient(#F472B6, #EC4899)", borderColor: "#EC4899" },
+  { text: "App Prototyping", gradient: "linear-gradient(#818CF8, #6366F1)", borderColor: "#6366F1" },
+  { text: "Backend APIs", gradient: "linear-gradient(#34D399, #10B981)", borderColor: "#10B981" },
+  { text: "Firebase Integration", gradient: "linear-gradient(#FB923C, #F97316)", borderColor: "#F97316" },
+  { text: "Push Notifications", gradient: "linear-gradient(#06B6D4, #0891B2)", borderColor: "#0891B2" },
+  { text: "App Store Deployment", gradient: "linear-gradient(#EF4444, #DC2626)", borderColor: "#DC2626" },
 ];
 
 const PortfolioSection = () => {
   return (
-    <div className="relative max-w-8xl mx-auto px-4 py-16">
+    <div className="relative max-w-8xl mx-auto px-4 py-6">
       {/* Top Left Decoration */}
       <div className="absolute left-0 top-0">
         <Image src={d7} alt="" width={200} height={200} />
@@ -89,14 +88,14 @@ const PortfolioSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
         >
-          <div className="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto mb-16">
+          <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto mb-16">
             {categories.map((category, index) => (
-              <span
+              <Tag
                 key={index}
-                className={`${category.color} text-sm px-4 py-2 rounded-full cursor-pointer hover:opacity-90 transition-opacity`}
-              >
-                {category.name}
-              </span>
+                text={category.text}
+                gradient={category.gradient}
+                borderColor={category.borderColor}
+              />
             ))}
           </div>
         </motion.div>
@@ -110,24 +109,20 @@ const PortfolioSection = () => {
             viewport={{ once: true, amount: 0.3 }}
           >
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            {imageUrls.map((url, i) => (
-              <div
-                key={i}
-                className="relative bg-gray-100 rounded-lg overflow-hidden"
-                style={{ aspectRatio: '625 / 1235' }} // maintains your image ratio
-              >
-                <Image
-                  src={url}
-                  alt={`Portfolio item ${i + 1}`}
-                  layout="fill"
-                />
-              </div>
-            ))}
-          </div>
-
-
-
-
+              {imageUrls.map((url, i) => (
+                <div
+                  key={i}
+                  className="relative bg-gray-100 rounded-lg overflow-hidden"
+                  style={{ aspectRatio: '625 / 1235' }}
+                >
+                  <Image
+                    src={url}
+                    alt={`Portfolio item ${i + 1}`}
+                    layout="fill"
+                  />
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
 
@@ -138,14 +133,13 @@ const PortfolioSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
         >
-          <Button>See More Work</Button>
+          {/* <Button>See More Work</Button> */}
         </motion.div>
       </div>
     </div>
   );
 };
 
-// Export Main Section
 export default function RapidAppsLanding() {
   return (
     <main className="min-h-screen">

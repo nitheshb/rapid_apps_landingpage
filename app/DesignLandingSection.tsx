@@ -32,26 +32,14 @@ export default function DesignLandingSection() {
 
       <div className="max-w-3xl mx-auto text-center">
         <motion.h2
-          className="text-[64px] leading-[60px] max-w-3xl mx-auto font-semibold mb-8"
-          transition={{ duration: 1, ease: "easeInOut" }}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-        >
-          Build Powerful Mobile Experiences with Rapid Apps
-        </motion.h2>
-
-        <motion.div
-          className="text-xl leading-[10px] text-black mb-16 space-y-5"
-          transition={{ duration: 1, ease: "easeInOut" }}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-        >
-          <p>We design intuitive mobile apps that users love.</p>
-          <p>We develop fast, scalable, cross-platform solutions.</p>
-          <p>We help you launch and grow your mobile presence, faster.</p>
-        </motion.div>
+        className="text-[40px] md:text-[64px] leading-tight max-w-4xl mx-auto text-center text-gray-900 mb-8"
+        transition={{ duration: 1, ease: "easeInOut" }}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+      >
+        Build <span className="text-italics">Powerful</span> Mobile Experiences with Rapid Apps
+      </motion.h2>
 
         <motion.div
           transition={{ duration: 1, delay: 0.2, ease: "easeInOut" }}

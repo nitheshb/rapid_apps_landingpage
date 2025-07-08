@@ -7,7 +7,8 @@ import Marquee from 'react-fast-marquee';
 import hero1 from './images/hero1.svg';
 import hero2 from './images/hero2.svg';
 import dot from './images/dot.svg';
-import whatsappIcon from './images/whatsapp.svg';
+import Button from './Button';
+
 
 import {
   Tv,
@@ -39,11 +40,6 @@ const Header = () => (
   <header className="w-full fixed top-0 z-50 bg-white shadow-sm">
     <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
       <div className="text-2xl font-bold text-black">Rapid Apps</div>
-      <nav className="hidden md:flex space-x-6 text-gray-700 font-medium">
-        <a href="#services" className="hover:text-black">Services</a>
-        <a href="#about" className="hover:text-black">About</a>
-        <a href="#contact" className="hover:text-black">Contact</a>
-      </nav>
     </div>
   </header>
 );
@@ -51,7 +47,7 @@ const Header = () => (
 
   return (
     <div className="min-h-screen">
-       <Header /> {/* Add this line here */}
+       <Header />
       <main className="relative overflow-hidden">
         {/* Decorative Shapes */}
         <div className="absolute left-0 top-20">
@@ -84,22 +80,13 @@ const Header = () => (
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          <a
-            href="https://wa.me/+353892510895"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-6 py-3 rounded-xl text-white bg-green-600 hover:bg-green-700 transition-all text-sm sm:text-base"
-          >
-            <Image
-              src={whatsappIcon}
-              alt="WhatsApp"
-              width={20}
-              height={20}
-            />
-            WhatsApp Us
-          </a>
-
-
+        <Button
+          onClick={() => {
+            document.getElementById("rapid-apps")?.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
+         📞 Book a Call
+        </Button>
         </motion.div>
 
           {/* Tag */}
@@ -131,7 +118,7 @@ const Header = () => (
               <div key={index} className="flex items-center mx-8 space-x-3 text-white">
                 <Image src={dot} alt="dot" className="w-3 h-3 object-contain" />
                 <industry.icon className="w-8 h-8 text-white" />
-                <span className="text-xl font-bold">{industry.title}</span>
+                <span className="text-xl">{industry.title}</span>
               </div>
             ))}
           </Marquee>

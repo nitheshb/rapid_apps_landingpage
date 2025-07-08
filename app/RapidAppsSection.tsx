@@ -4,6 +4,7 @@ import s2 from "./images/s2.svg";
 import s3 from "./images/s3.svg";
 import { motion } from "framer-motion";
 import whatsappIcon from './images/whatsapp.svg';
+import Button from "./Button";
 
 const RapidAppsSection = () => {
   return (
@@ -26,31 +27,25 @@ const RapidAppsSection = () => {
           {/* Main Content */}
           <div className="text-center max-w-2xl mx-auto pt-16 pb-8">
 
-            <h1 className="text-5xl font-bold mb-4 text-gray-900">
+            <h1 className="text-4xl font-bold mb-8 text-gray-900">
               Build Faster, Launch Smarter – With Rapid Apps
             </h1>
-            <p className="text-gray-600 text-xl mb-8">
+            {/* <p className="text-gray-600 text-xl mb-8">
               We specialize in building high-performance mobile applications for both Android and iOS. Whether you're launching your startup idea or scaling your enterprise tech, we bring speed, quality, and reliability.
-            </p>
+            </p> */}
 
             {/* Contact Options */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a
-                href="tel:+353892510895"
-                className="inline-flex items-center gap-3 px-6 py-3 rounded-xl text-white bg-black hover:bg-gray-800 transition-all text-sm sm:text-base"
-              >
-                Call: +353 892510895
-              </a>
+              <Button>📞 Call: +353 892510895</Button>
 
-              <a
+              <Button
                 href="https://wa.me/+353892510895"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-6 py-3 rounded-xl text-white bg-green-600 hover:bg-green-700 transition-all text-sm sm:text-base"
+                variant="green"
               >
                 <Image src={whatsappIcon} alt="WhatsApp" width={20} height={20} />
                 WhatsApp Us
-              </a>
+              </Button>
+
             </div>
 
             <p className="text-sm text-gray-500 mt-6">

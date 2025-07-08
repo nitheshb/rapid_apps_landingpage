@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Figtree } from 'next/font/google'
+
+const figtree = Figtree({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'], // Add weights you need
+  variable: '--font-figtree',    // Optional: use as CSS variable
+})
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,9 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${figtree.className} antialiased`}>
         {children}
       </body>
     </html>
