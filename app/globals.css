@@ -41,12 +41,6 @@ body {
 } */
 
 @layer utilities {
- .text-italics {
-  font-family: 'ModernataSerif', Arial, sans-serif;
-  font-style: italic;
-  font-weight: 400;
-  letter-spacing: 0;
-}
 
 }
 

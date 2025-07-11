@@ -41,7 +41,7 @@ export const products = [
   {
     title: 'Editrix AI',
     link: 'https://kaggle-clone-xi.vercel.app/',
-    thumbnail: '/scrollp_5.jpeg',
+    thumbnail: '/scrollp5.jpeg',
   },
   {
     title: 'Pixel Perfect',

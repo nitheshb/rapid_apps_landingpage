@@ -68,7 +68,6 @@ const industries = [
 
 const IndustryShowcaseBox = () => {
   const [startIndex, setStartIndex] = useState(0);
-  const visibleItems = industries.slice(startIndex, startIndex + 5);
 
   const next = () => {
     if (startIndex + 5 < industries.length) setStartIndex(startIndex + 1);
@@ -78,50 +77,61 @@ const IndustryShowcaseBox = () => {
     if (startIndex > 0) setStartIndex(startIndex - 1);
   };
 
+  // For desktop, only show sliced. For mobile, show full list.
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+  const visibleItems = isMobile
+    ? industries
+    : industries.slice(startIndex, startIndex + 5);
+
   return (
-    <div className="max-w-8xl mx-auto px-6 py-24">
-      <div className="text-center mb-16">
-        <h2 className="text-5xl font-semibold leading-tight">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-20">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl sm:text-5xl font-semibold leading-tight">
           Domains We Empower
         </h2>
       </div>
 
-      <div className="flex justify-center gap-8 mb-24 relative">
-        {visibleItems.map((item, index) => {
-          const bgUrl = backgroundImages[(startIndex + index) % backgroundImages.length];
+      <div className="relative">
+        {/* Scrollable container on mobile */}
+        <div className="flex sm:justify-center gap-6 sm:gap-8 overflow-x-auto sm:overflow-visible pb-4">
+          {visibleItems.map((item, index) => {
+            const bgUrl = backgroundImages[index % backgroundImages.length];
 
-          return (
-            <div key={index} className="w-[220px] text-left flex-shrink-0 relative">
+            return (
               <div
-                className="w-[220px] h-[220px] rounded-[32px] flex items-center justify-center text-white mb-4 bg-cover bg-center"
-                style={{
-                  backgroundImage: `url(${bgUrl})`,
-                }}
+                key={index}
+                className="min-w-[220px] w-[220px] flex-shrink-0 text-left relative"
               >
-                {item.icon}
-              </div>
-              <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-              <p className="text-xl text-gray-600 leading-snug">{item.description}</p>
-
-              {index === 0 && (
-                <div className="absolute -bottom-20 left-0 flex gap-4">
-                  <button
-                    onClick={prev}
-                    className="w-12 h-12 rounded-full bg-white shadow flex items-center justify-center hover:scale-105 transition"
-                  >
-                    <ChevronLeft size={24} />
-                  </button>
-                  <button
-                    onClick={next}
-                    className="w-12 h-12 rounded-full bg-white shadow flex items-center justify-center hover:scale-105 transition"
-                  >
-                    <ChevronRight size={24} />
-                  </button>
+                <div
+                  className="w-[220px] h-[220px] rounded-[32px] flex items-center justify-center text-white mb-4 bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url(${bgUrl})`,
+                  }}
+                >
+                  {item.icon}
                 </div>
-              )}
-            </div>
-          );
-        })}
+                <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
+                <p className="text-md text-gray-600 leading-snug">{item.description}</p>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Arrows - only for desktop */}
+        <div className="hidden sm:flex absolute -bottom-12 left-0 gap-4">
+          <button
+            onClick={prev}
+            className="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center hover:scale-105 transition"
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <button
+            onClick={next}
+            className="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center hover:scale-105 transition"
+          >
+            <ChevronRight size={20} />
+          </button>
+        </div>
       </div>
     </div>
   );
