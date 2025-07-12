@@ -60,15 +60,16 @@ const DesignAgencyHero = () => {
 
         {/* Main Heading Section */}
         <motion.div
-  className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-32 pb-16 text-center relative z-10"
-  transition={{ duration: 1, ease: "easeInOut" }}
-  initial={{ opacity: 0, y: 50 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true, amount: 0.5 }}
->
-
-          <h1 className="text-3xl sm:text-[72px] font-bold leading-tight text-center text-gray-900 drop-shadow-sm">
-            All-in-one Solution for <br /> Mobile App <span className="font-serif italic">Development</span>
+          className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-32 pb-16 text-center relative z-10"
+          transition={{ duration: 1, ease: "easeInOut" }}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+        >
+          <h1 className="text-2xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold leading-snug text-center text-gray-900 drop-shadow-sm">
+            All-in-one Solution for{" "}
+            <span className="block sm:inline">Mobile App</span>{" "}
+            <span className="font-serif italic">Development</span>
           </h1>
 
           <p className="mt-6 text-[24px] text-gray-600 max-w-2xl mx-auto">

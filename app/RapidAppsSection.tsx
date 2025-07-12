@@ -32,7 +32,9 @@ const RapidAppsSection = () => {
 
             {/* Contact Options */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button href="tel:+353892510895">📞 Call: +353 892510895</Button>
+              <Button href="tel:+353892510895" className="whitespace-nowrap">
+                📞 Call: +353 892510895
+              </Button>
 
               <Button href="https://wa.me/+353892510895" variant="green">
                 <Image
