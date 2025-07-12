@@ -68,7 +68,7 @@ const DesignAgencyHero = () => {
 >
 
           <h1 className="text-3xl sm:text-[72px] font-bold leading-tight text-center text-gray-900 drop-shadow-sm">
-            All-in-one solution for <br /> mobile app development
+            All-in-one Solution for <br /> Mobile App <span className="font-serif italic">Development</span>
           </h1>
 
           <p className="mt-6 text-[24px] text-gray-600 max-w-2xl mx-auto">
@@ -85,7 +85,7 @@ const DesignAgencyHero = () => {
             <Button
               onClick={() => {
                 document
-                  .getElementById("rapid-apps")
+                  .getElementById("contacts")
                   ?.scrollIntoView({ behavior: "smooth" });
               }}
             >

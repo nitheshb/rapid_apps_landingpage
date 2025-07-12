@@ -7,8 +7,7 @@ import { Menu, X } from "lucide-react";
 const navItems = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "#contacts" },
 ];
 
 const RapidAppsHeader = () => {

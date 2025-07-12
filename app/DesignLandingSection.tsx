@@ -3,31 +3,29 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Button from "./Button";
+import { Paintbrush, Code, Rocket } from "lucide-react";
 
 import dic1 from "./images/dlc1.svg";
 import dic2 from "./images/dlc2.svg";
-
-import { Paintbrush, Code, Rocket } from "lucide-react";
 
 export default function DesignLandingSection() {
   const steps = [
     {
       title: "Design",
       description: "Crafted UI/UX for iOS and Android with intuitive navigation.",
-      gradient: "from-yellow-300 via-orange-400 to-pink-400",
+      image: "https://cdn.prod.website-files.com/5837424ae11409586f837994/678566be2e0d80a12b14b201_Group%201171274549.jpg",
       icon: Paintbrush,
     },
     {
       title: "Develop",
       description: "Robust Flutter & React Native apps backed by scalable APIs.",
-      gradient: "from-indigo-400 via-purple-400 to-blue-400",
+      image: "https://cdn.prod.website-files.com/5837424ae11409586f837994/678566be2ee6c9d4759c837e_Group%201171274550.jpg",
       icon: Code,
     },
     {
       title: "Launch",
       description: "App store submissions, analytics, and version upgrades sorted.",
-      gradient: "from-red-400 via-rose-500 to-yellow-400",
+      image: "https://cdn.prod.website-files.com/5837424ae11409586f837994/678566bffa49c6b76cccbe18_Group%201171274548.jpg",
       icon: Rocket,
     },
   ];
@@ -51,46 +49,39 @@ export default function DesignLandingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Build <span className="italic">Powerful</span> Mobile Experiences with Rapid Apps
+          Build <span className="italic font-serif">Powerful</span> Mobile Experiences with Rapid Apps
         </motion.h2>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-10">
+        <div className="flex flex-wrap justify-center gap-6">
           {steps.map((step, i) => {
             const Icon = step.icon;
             return (
               <motion.div
                 key={i}
-                className={`rounded-3xl shadow-xl p-6 md:p-8 text-left flex flex-col justify-between h-full bg-gradient-to-br ${step.gradient} text-white relative overflow-hidden`}
+                className="relative w-[250px] h-[250px] rounded-[32px] overflow-hidden shadow-lg flex flex-col justify-end text-left group"
                 transition={{ duration: 0.8, delay: i * 0.2 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <Icon size={36} strokeWidth={1.5} className="text-white mb-6" />
-                <div>
-                  <h3 className="text-2xl font-semibold mb-2">{step.title}</h3>
-                  <p className="text-sm sm:text-base leading-relaxed">
-                    {step.description}
-                  </p>
+                {/* Background Image */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${step.image})` }}
+                />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition duration-300" />
+                {/* Content */}
+                <div className="relative z-10 p-4 text-white">
+                  <Icon size={40} strokeWidth={1.5} className="mb-3" />
+                  <h3 className="text-lg font-semibold mb-1">{step.title}</h3>
+                  <p className="text-sm">{step.description}</p>
                 </div>
               </motion.div>
             );
           })}
         </div>
-
-        {/* CTA */}
-        <motion.div
-          className="mt-16"
-          transition={{ duration: 1, delay: 0.4 }}
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <Button className="text-base px-6 py-3 rounded-full bg-black text-white hover:bg-gray-800">
-            📞 Call: +353 892510895
-          </Button>
-        </motion.div>
       </div>
     </div>
   );

@@ -9,14 +9,14 @@ import p2 from './images/person_2.jpg';
 const reviews = [
   {
     quote: 'They delivered a stunning app design that feels effortless and intuitive.',
-    author: 'Bhavish',
-    subtitle: 'CEO, Ola',
+    author: 'Girdhar',
+    subtitle: 'CEO, AppyPie',
     image: p1,
   },
   {
     quote: 'The speed and quality of development were beyond our expectations.',
-    author: 'Kunal',
-    subtitle: 'CEO, CRED',
+    author: 'Anand',
+    subtitle: 'CEO, Oswald Labs',
     image: p2,
   },
 ];
@@ -26,7 +26,7 @@ const ReviewSection = () => {
     <div className="max-w-4xl mx-auto px-6 py-20">
       <div className="text-center mb-16">
         <h2 className="text-4xl sm:text-5xl font-bold leading-tight">
-          What Our Clients Say
+          What Our <span className='italic font-serif'>Clients</span> Say
         </h2>
         <p className="text-gray-500 text-base sm:text-lg max-w-xl mx-auto mt-4">
           Hear from founders, investors, and leaders who trusted us to build their mobile app experiences.

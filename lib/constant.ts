@@ -20,7 +20,7 @@ export const products = [
   {
     title: 'Moonbeam',
     link: 'https://gomoonbeam.com',
-    thumbnail: '/scrollp_1.jpeg',
+    thumbnail: './scrollp_1.jpeg',
   },
   {
     title: 'Cursor',
@@ -41,7 +41,7 @@ export const products = [
   {
     title: 'Editrix AI',
     link: 'https://kaggle-clone-xi.vercel.app/',
-    thumbnail: '/scrollp5.jpeg',
+    thumbnail: '/scrollp_5.jpeg',
   },
   {
     title: 'Pixel Perfect',
@@ -58,42 +58,6 @@ export const products = [
     title: 'Aceternity UI',
     link: 'https://ui.aceternity.com',
     thumbnail: '/scrollp_2.jpeg',
-  },
-  {
-    title: 'Tailwind Master Kit',
-    link: 'https://tailwindmasterkit.com',
-    thumbnail: '/scrollp_1.jpeg',
-  },
-  {
-    title: 'SmartBridge',
-    link: 'https://smartbridgetech.com',
-    thumbnail: '/scrollp_1.jpeg',
-  },
-  {
-    title: 'Renderwork Studio',
-    link: 'https://renderwork.studio',
-    thumbnail: '/scrollp_1.jpeg',
-  },
-
-  {
-    title: 'Creme Digital',
-    link: 'https://cremedigital.com',
-    thumbnail: '/scrollp_1.jpeg',
-  },
-  {
-    title: 'Golden Bells Academy',
-    link: 'https://goldenbellsacademy.com',
-    thumbnail: '/scrollp_1.jpeg',
-  },
-  {
-    title: 'Invoker Labs',
-    link: 'https://invoker.lol',
-    thumbnail: '/scrollp_1.jpeg',
-  },
-  {
-    title: 'E Free Invoice',
-    link: 'https://efreeinvoice.com',
-    thumbnail: '/scrollp_1.jpeg',
   },
 ]
 
