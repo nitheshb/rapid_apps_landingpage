@@ -18,6 +18,7 @@ import MobileAppMissionBox from "./MobileAppMissionBox";
 import IndustryShowcase from "./IndustryShowcase";
 import ReviewSection from "./ReviewSection";
 import ParallaxProjectsSection from "./ParallaxProjectsSection";
+import CtaSection from "./CtaSection";
 
 export default function Home() {
   const [rotation, setRotation] = useState(0);
@@ -37,16 +38,17 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen w-full overflow-x-hidden">
+    <div className="min-h-screen w-full">
+      <RapidAppsHeader />
       {/** Header */}
 
       {/* Background Container */}
       <div
         className="
           w-full 
-          max-w-[97%]      
+             
           mx-auto 
-          rounded-[36px] 
+     
   
           overflow-hidden
         "
@@ -58,9 +60,9 @@ export default function Home() {
         }}
       >
         <div className=" mx-auto px-4 sm:px-6 xl:px-0">
-          <RapidAppsHeader />
+          
           {/* Hero Section */}
-          <div className="mb-8 md:mb-12 lg:mb-16">
+          <div className="mb-4 md:mb-6 lg:mb-8">
             <DesignAgencyHero />
           </div>
 
@@ -78,6 +80,7 @@ export default function Home() {
               <DesignJoyLanding />
             </div>
             <AppStoreBadges />
+            <CtaSection />
             <div id="contacts">
               <RapidAppsSection />
             </div>
