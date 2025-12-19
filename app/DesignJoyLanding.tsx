@@ -5,6 +5,8 @@ import Image from "next/image";
 import Tag from "./Tag";
 import { motion } from "framer-motion";
 
+import { useState } from "react";
+
 // Portfolio Images
 import d1 from "../public/d_1.jpeg";
 import d2 from "../public/d_2.jpeg";
@@ -12,66 +14,73 @@ import d3 from "../public/d_3.jpeg";
 import d4 from "../public/d_4.jpeg";
 import d5 from "../public/d_5.jpeg";
 import d6 from "../public/d_6.jpeg";
+import north from "../public/north.png";
+import p5 from "../public/p5.png";
 import d7 from "./images/d7.svg";
 import d8 from "./images/d8.svg";
 import line from "./images/line.svg";
 
-const imageUrls = [d1, d2, d3, d4, d5, d6];
+const portfolioItems = [
+  { url: d1, categories: ["Jewellery", "Clothing"], type: "mobile" },
+  { url: north, categories: ["Jewellery", "E-commerce"], type: "web" },
+  { url: d2, categories: ["Poultry", "Task"], type: "mobile" },
+  { url: p5, categories: ["Clothing", "Logistics"], type: "web" },
+  { url: d3, categories: ["Jewellery", "E-commerce"], type: "mobile" },
+  { url: d4, categories: ["Clothing", "Logistics"], type: "mobile" },
+  { url: d5, categories: ["Poultry", "Agriculture"], type: "mobile" },
+  { url: d6, categories: ["Task", "Management"], type: "mobile" },
+];
 
 const categories = [
   {
-    text: "iOS Development",
+    text: "Jewellery",
     gradient: "linear-gradient(#2563EB, #1D4ED8)",
     borderColor: "#1D4ED8",
   },
   {
-    text: "Android Development",
+    text: "Clothing",
     gradient: "linear-gradient(#22C55E, #16A34A)",
     borderColor: "#16A34A",
   },
   {
-    text: "Flutter Apps",
+    text: "Poultry",
     gradient: "linear-gradient(#A855F7, #9333EA)",
     borderColor: "#9333EA",
   },
   {
-    text: "React Native",
+    text: "Task",
     gradient: "linear-gradient(#FACC15, #EAB308)",
     borderColor: "#EAB308",
   },
   {
-    text: "UI/UX Design",
+    text: "E-commerce",
     gradient: "linear-gradient(#F472B6, #EC4899)",
     borderColor: "#EC4899",
   },
   {
-    text: "App Prototyping",
+    text: "Logistics",
     gradient: "linear-gradient(#818CF8, #6366F1)",
     borderColor: "#6366F1",
   },
   {
-    text: "Backend APIs",
+    text: "Agriculture",
     gradient: "linear-gradient(#34D399, #10B981)",
     borderColor: "#10B981",
   },
   {
-    text: "Firebase Integration",
+    text: "Management",
     gradient: "linear-gradient(#FB923C, #F97316)",
     borderColor: "#F97316",
-  },
-  {
-    text: "Push Notifications",
-    gradient: "linear-gradient(#06B6D4, #0891B2)",
-    borderColor: "#0891B2",
-  },
-  {
-    text: "App Store Deployment",
-    gradient: "linear-gradient(#EF4444, #DC2626)",
-    borderColor: "#DC2626",
   },
 ];
 
 const PortfolioSection = () => {
+  const [activeCategory, setActiveCategory] = useState(categories[0].text);
+
+  const filteredItems = portfolioItems.filter((item) =>
+    item.categories.includes(activeCategory)
+  );
+
   return (
     <div className="relative max-w-8xl mx-auto px-4 py-6 overflow-hidden">
       {/* Top Left Decoration */}
@@ -118,7 +127,7 @@ const PortfolioSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
         >
-          Mobile, Enterprise, AI, DevOps
+          Mobile, Enterprise, AI, E-commerce
           <br />— Powered by Rapid Apps
         </motion.h1>
 
@@ -136,55 +145,72 @@ const PortfolioSection = () => {
                 text={category.text}
                 gradient={category.gradient}
                 borderColor={category.borderColor}
+                onClick={() => setActiveCategory(category.text)}
+                isActive={activeCategory === category.text}
               />
             ))}
           </div>
         </motion.div>
 
-        {/* Portfolio Images */}
-        <div className="relative max-w-6xl mx-auto px-2 sm:px-4 py-10">
-          <motion.div
-            transition={{ duration: 1, ease: "easeInOut" }}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            {/* ✅ Scrollable on Mobile */}
-            <div className="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 sm:hidden">
-              {imageUrls.map((url, i) => (
-                <div
-                  key={i}
-                  className="relative min-w-[220px] h-[420px] rounded-xl overflow-hidden flex-shrink-0 snap-center"
-                >
-                  <Image
-                    src={url}
-                    alt={`Portfolio item ${i + 1}`}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
+        {/* Portfolio Images - Unified Horizontal Slider */}
+        <div className="relative w-full py-10">
+          <motion.div layout transition={{ duration: 0.5, ease: "easeInOut" }}>
+            <div 
+              className="flex items-center gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-12 hide-scrollbar"
+            >
+              {/* Left Spacer for Centering */}
+              <div className="flex-shrink-0 w-[calc(max(1.5rem,(100vw-1200px)/2))]" />
+              
+              {filteredItems.map((item, i) => (
+                <motion.div
+  key={i}
+  layout
+  initial={{ opacity: 0, scale: 0.95 }}
+  animate={{ opacity: 1, scale: 1 }}
+  exit={{ opacity: 0, scale: 0.95 }}
+  transition={{ duration: 0.4 }}
+  className={`relative rounded-[2rem] overflow-hidden bg-gray-50 flex-shrink-0 snap-center shadow-2xl border border-gray-100/50 ${
+    item.type === "web"
+      ? "w-[85vw] sm:w-[850px] h-[400px] sm:h-[580px]"
+      : "w-[260px] sm:w-[320px] h-[450px] sm:h-[580px]"
+  }`}
+>
+  <Image
+    src={item.url}
+    alt={`Portfolio item ${i + 1}`}
+    fill
+    className="object-contain p-4"
+    priority={i < 2}
+  />
+  <div className="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-[2rem]" />
+</motion.div>
               ))}
+
+              {/* Right Spacer for Centering */}
+              <div className="flex-shrink-0 w-[calc(max(1.5rem,(100vw-1200px)/2))]" />
             </div>
 
-            {/* ✅ Grid Layout on Desktop */}
-            <div className="hidden sm:grid grid-cols-1 md:grid-cols-3 gap-6">
-              {imageUrls.map((url, i) => (
-                <div
-                  key={i}
-                  className="relative bg-gray-100 rounded-lg overflow-hidden"
-                  style={{ aspectRatio: "625 / 1235" }}
-                >
-                  <Image
-                    src={url}
-                    alt={`Portfolio item ${i + 1}`}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              ))}
-            </div>
+            {filteredItems.length === 0 && (
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="text-gray-500 mt-10 text-center"
+              >
+                No projects found in this category.
+              </motion.p>
+            )}
           </motion.div>
         </div>
+
+        <style jsx global>{`
+          .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+          }
+          .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+        `}</style>
       </div>
     </div>
   );

@@ -62,7 +62,7 @@ export default function Home() {
         <div className=" mx-auto px-4 sm:px-6 xl:px-0">
           
           {/* Hero Section */}
-          <div className="mb-4 md:mb-6 lg:mb-8">
+          <div className="mb-0">
             <DesignAgencyHero />
           </div>
 

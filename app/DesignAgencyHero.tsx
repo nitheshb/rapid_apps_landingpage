@@ -16,14 +16,8 @@ export default function DesignAgencyHero() {
             </div>
 
             {/* Headline */}
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-black mb-6 leading-[1.1]">
-                Native Mobile Apps
-                <br />
-                that look EXACTLY
-                <br />
-                like Your Shopify
-                <br />
-                Store.
+            <h1 className="text-5xl md:text-7xl font-bold text-black mb-6 leading-[1.1] max-w-5xl mx-auto">
+                Native Mobile Apps that look EXACTLY like Your Shopify Store.
             </h1>
 
             {/* Subtext */}
