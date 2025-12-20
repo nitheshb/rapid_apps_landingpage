@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Tag from "./Tag";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 import { useState } from "react";
 
@@ -19,16 +19,72 @@ import p5 from "../public/p5.png";
 import d7 from "./images/d7.svg";
 import d8 from "./images/d8.svg";
 import line from "./images/line.svg";
+import nonasties_web from "../public/nonasties_web.png";
+import jewelary from "../public/jewelary.jpg";
+import jewellery2 from "../public/jewellery2.jpg";
+import cluck_egg from "../public/cluck_egg.jpg";
+import jewellery_web from "../public/jewellery_web.png";
+
+const MobileMockup = ({ image, index }: { image: any; index: number }) => {
+  const caseClass = `case-${(index % 4) + 1}`;
+  
+  // Side-ways tilt: First item tilts left, second tilts right (mirroring)
+  const isFirst = index === 0;
+  
+  return (
+    <div 
+      className={`iphone-case ${caseClass} scale-[0.85] sm:scale-100 transition-transform duration-500 ease-out hover:rotate-0`}
+      style={{
+        transform: `rotate(${isFirst ? '-8deg' : '8deg'})`
+      }}
+    >
+      <div className="gradient-container">
+        <div className="gradient-1" />
+        <div className="gradient-1" style={{ transform: 'rotate(180deg)' }} />
+      </div>
+      <div className="iphone-screen">
+        <Image src={image} alt="" fill className="object-cover" />
+      </div>
+    </div>
+  );
+};
+
+const WebMockup = ({ image }: { image: any }) => {
+  return (
+    <div className="object-laptop w-full max-w-[800px] mx-auto transition-transform duration-500 hover:scale-[1.02]">
+      <div className="screen">
+        <div className="lcd">
+          <Image src={image} alt="" fill className="object-cover" />
+        </div>
+        <div className="gloss" />
+        <div className="reflexion" />
+        <div className="highlight one" />
+        <div className="highlight two" />
+      </div>
+      <div className="keyboard one" />
+      <div className="keyboard two" />
+    </div>
+  );
+};
 
 const portfolioItems = [
-  { url: d1, categories: ["Jewellery", "Clothing"], type: "mobile" },
-  { url: north, categories: ["Jewellery", "E-commerce"], type: "web" },
-  { url: d2, categories: ["Poultry", "Task"], type: "mobile" },
-  { url: p5, categories: ["Clothing", "Logistics"], type: "web" },
-  { url: d3, categories: ["Jewellery", "E-commerce"], type: "mobile" },
-  { url: d4, categories: ["Clothing", "Logistics"], type: "mobile" },
+  { url: jewelary, categories: ["Jewellery"], type: "mobile" },
+  { url: jewellery_web, categories: ["Jewellery"], type: "web" },
+  { url: jewellery2, categories: ["Jewellery"], type: "mobile" },
+  { url: jewelary, categories: ["Clothing"], type: "mobile" },
+  { url: nonasties_web, categories: ["Clothing"], type: "web" },
+  { url: d4, categories: ["Clothing"], type: "mobile" },
+  { url: cluck_egg, categories: ["Poultry", "Agriculture"], type: "mobile" },
+  { url: cluck_egg, categories: ["Poultry", "Agriculture"], type: "web" },
   { url: d5, categories: ["Poultry", "Agriculture"], type: "mobile" },
+  { url: cluck_egg, categories: ["Task"], type: "mobile" },
+  { url: cluck_egg, categories: ["Task"], type: "web" },
   { url: d6, categories: ["Task", "Management"], type: "mobile" },
+  { url: nonasties_web, categories: ["Logistics"], type: "web" },
+  { url: d4, categories: ["Logistics"], type: "mobile" },
+  { url: cluck_egg, categories: ["E-commerce", "Management"], type: "mobile" },
+  { url: cluck_egg, categories: ["E-commerce", "Management"], type: "web" },
+  { url: d5, categories: ["Agriculture"], type: "mobile" },
 ];
 
 const categories = [
@@ -80,6 +136,13 @@ const PortfolioSection = () => {
   const filteredItems = portfolioItems.filter((item) =>
     item.categories.includes(activeCategory)
   );
+
+  // Ensure order: Mobile, Web, Mobile
+  const orderedItems = [
+    ...filteredItems.filter(item => item.type === 'mobile').slice(0, 1),
+    ...filteredItems.filter(item => item.type === 'web').slice(0, 1),
+    ...filteredItems.filter(item => item.type === 'mobile').slice(1, 2)
+  ];
 
   return (
     <div className="relative max-w-8xl mx-auto px-4 py-6 overflow-hidden">
@@ -152,45 +215,48 @@ const PortfolioSection = () => {
           </div>
         </motion.div>
 
-        {/* Portfolio Images - Unified Horizontal Slider */}
+        {/* Portfolio Images - Refined Overlapping Layout (No Gaps) */}
         <div className="relative w-full py-10">
           <motion.div layout transition={{ duration: 0.5, ease: "easeInOut" }}>
-            <div 
-              className="flex items-center gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-12 hide-scrollbar"
-            >
-              {/* Left Spacer for Centering */}
-              <div className="flex-shrink-0 w-[calc(max(1.5rem,(100vw-1200px)/2))]" />
-              
-              {filteredItems.map((item, i) => (
-                <motion.div
-  key={i}
-  layout
-  initial={{ opacity: 0, scale: 0.95 }}
-  animate={{ opacity: 1, scale: 1 }}
-  exit={{ opacity: 0, scale: 0.95 }}
-  transition={{ duration: 0.4 }}
-  className={`relative rounded-[2rem] overflow-hidden bg-gray-50 flex-shrink-0 snap-center shadow-2xl border border-gray-100/50 ${
-    item.type === "web"
-      ? "w-[85vw] sm:w-[850px] h-[400px] sm:h-[580px]"
-      : "w-[260px] sm:w-[320px] h-[450px] sm:h-[580px]"
-  }`}
->
-  <Image
-    src={item.url}
-    alt={`Portfolio item ${i + 1}`}
-    fill
-    className="object-contain p-4"
-    priority={i < 2}
-  />
-  <div className="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-[2rem]" />
-</motion.div>
-              ))}
+            <AnimatePresence mode="wait">
+              <motion.div 
+                key={activeCategory}
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -50 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-0 max-w-[1400px] mx-auto px-4 items-center"
+              >
+                {orderedItems.map((item, i) => {
+                  const mobileIdx = i === 2 ? 1 : 0;
+                  
+                  return (
+                    <div
+                      key={i}
+                      className={`relative flex items-center justify-center ${
+                        item.type === "web"
+                          ? "col-span-1 sm:col-span-2 lg:col-span-3 h-[240px] sm:h-[350px] lg:h-[480px] z-10"
+                          : `col-span-1 h-[280px] sm:h-[320px] lg:h-[400px] z-20 ${
+                              i === 0 ? "lg:-mr-28" : "lg:-ml-28"
+                            }`
+                      }`}
+                    >
+                      {item.type === "web" ? (
+                        <div className="w-full scale-100 lg:scale-[1.2]">
+                          <WebMockup image={item.url} />
+                        </div>
+                      ) : (
+                        <div className="scale-[0.70] sm:scale-[0.80] lg:scale-[0.85]">
+                          <MobileMockup image={item.url} index={mobileIdx} />
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </motion.div>
+            </AnimatePresence>
 
-              {/* Right Spacer for Centering */}
-              <div className="flex-shrink-0 w-[calc(max(1.5rem,(100vw-1200px)/2))]" />
-            </div>
-
-            {filteredItems.length === 0 && (
+            {orderedItems.length === 0 && (
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
