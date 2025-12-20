@@ -3,7 +3,9 @@
 import React from "react";
 import Image from "next/image";
 import Tag from "./Tag";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+
+import { useState } from "react";
 
 // Portfolio Images
 import d1 from "../public/d_1.jpeg";
@@ -12,66 +14,136 @@ import d3 from "../public/d_3.jpeg";
 import d4 from "../public/d_4.jpeg";
 import d5 from "../public/d_5.jpeg";
 import d6 from "../public/d_6.jpeg";
+import north from "../public/north.png";
+import p5 from "../public/p5.png";
 import d7 from "./images/d7.svg";
 import d8 from "./images/d8.svg";
 import line from "./images/line.svg";
+import nonasties_web from "../public/nonasties_web.png";
+import jewelary from "../public/jewelary.jpg";
+import jewellery2 from "../public/jewellery2.jpg";
+import cluck_egg from "../public/cluck_egg.jpg";
+import jewellery_web from "../public/jewellery_web.png";
 
-const imageUrls = [d1, d2, d3, d4, d5, d6];
+const MobileMockup = ({ image, index }: { image: any; index: number }) => {
+  const caseClass = `case-${(index % 4) + 1}`;
+  
+  // Side-ways tilt: First item tilts left, second tilts right (mirroring)
+  const isFirst = index === 0;
+  
+  return (
+    <div 
+      className={`iphone-case ${caseClass} scale-[0.85] sm:scale-100 transition-transform duration-500 ease-out hover:rotate-0`}
+      style={{
+        transform: `rotate(${isFirst ? '-8deg' : '8deg'})`
+      }}
+    >
+      <div className="gradient-container">
+        <div className="gradient-1" />
+        <div className="gradient-1" style={{ transform: 'rotate(180deg)' }} />
+      </div>
+      <div className="iphone-screen">
+        <Image src={image} alt="" fill className="object-cover" />
+      </div>
+    </div>
+  );
+};
+
+const WebMockup = ({ image }: { image: any }) => {
+  return (
+    <div className="object-laptop w-full max-w-[800px] mx-auto transition-transform duration-500 hover:scale-[1.02]">
+      <div className="screen">
+        <div className="lcd">
+          <Image src={image} alt="" fill className="object-cover" />
+        </div>
+        <div className="gloss" />
+        <div className="reflexion" />
+        <div className="highlight one" />
+        <div className="highlight two" />
+      </div>
+      <div className="keyboard one" />
+      <div className="keyboard two" />
+    </div>
+  );
+};
+
+const portfolioItems = [
+  { url: jewelary, categories: ["Jewellery"], type: "mobile" },
+  { url: jewellery_web, categories: ["Jewellery"], type: "web" },
+  { url: jewellery2, categories: ["Jewellery"], type: "mobile" },
+  { url: jewelary, categories: ["Clothing"], type: "mobile" },
+  { url: nonasties_web, categories: ["Clothing"], type: "web" },
+  { url: d4, categories: ["Clothing"], type: "mobile" },
+  { url: cluck_egg, categories: ["Poultry", "Agriculture"], type: "mobile" },
+  { url: cluck_egg, categories: ["Poultry", "Agriculture"], type: "web" },
+  { url: d5, categories: ["Poultry", "Agriculture"], type: "mobile" },
+  { url: cluck_egg, categories: ["Task"], type: "mobile" },
+  { url: cluck_egg, categories: ["Task"], type: "web" },
+  { url: d6, categories: ["Task", "Management"], type: "mobile" },
+  { url: nonasties_web, categories: ["Logistics"], type: "web" },
+  { url: d4, categories: ["Logistics"], type: "mobile" },
+  { url: cluck_egg, categories: ["E-commerce", "Management"], type: "mobile" },
+  { url: cluck_egg, categories: ["E-commerce", "Management"], type: "web" },
+  { url: d5, categories: ["Agriculture"], type: "mobile" },
+];
 
 const categories = [
   {
-    text: "iOS Development",
+    text: "Jewellery",
     gradient: "linear-gradient(#2563EB, #1D4ED8)",
     borderColor: "#1D4ED8",
   },
   {
-    text: "Android Development",
+    text: "Clothing",
     gradient: "linear-gradient(#22C55E, #16A34A)",
     borderColor: "#16A34A",
   },
   {
-    text: "Flutter Apps",
+    text: "Poultry",
     gradient: "linear-gradient(#A855F7, #9333EA)",
     borderColor: "#9333EA",
   },
   {
-    text: "React Native",
+    text: "Task",
     gradient: "linear-gradient(#FACC15, #EAB308)",
     borderColor: "#EAB308",
   },
   {
-    text: "UI/UX Design",
+    text: "E-commerce",
     gradient: "linear-gradient(#F472B6, #EC4899)",
     borderColor: "#EC4899",
   },
   {
-    text: "App Prototyping",
+    text: "Logistics",
     gradient: "linear-gradient(#818CF8, #6366F1)",
     borderColor: "#6366F1",
   },
   {
-    text: "Backend APIs",
+    text: "Agriculture",
     gradient: "linear-gradient(#34D399, #10B981)",
     borderColor: "#10B981",
   },
   {
-    text: "Firebase Integration",
+    text: "Management",
     gradient: "linear-gradient(#FB923C, #F97316)",
     borderColor: "#F97316",
-  },
-  {
-    text: "Push Notifications",
-    gradient: "linear-gradient(#06B6D4, #0891B2)",
-    borderColor: "#0891B2",
-  },
-  {
-    text: "App Store Deployment",
-    gradient: "linear-gradient(#EF4444, #DC2626)",
-    borderColor: "#DC2626",
   },
 ];
 
 const PortfolioSection = () => {
+  const [activeCategory, setActiveCategory] = useState(categories[0].text);
+
+  const filteredItems = portfolioItems.filter((item) =>
+    item.categories.includes(activeCategory)
+  );
+
+  // Ensure order: Mobile, Web, Mobile
+  const orderedItems = [
+    ...filteredItems.filter(item => item.type === 'mobile').slice(0, 1),
+    ...filteredItems.filter(item => item.type === 'web').slice(0, 1),
+    ...filteredItems.filter(item => item.type === 'mobile').slice(1, 2)
+  ];
+
   return (
     <div className="relative max-w-8xl mx-auto px-4 py-6 overflow-hidden">
       {/* Top Left Decoration */}
@@ -118,7 +190,7 @@ const PortfolioSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
         >
-          Mobile, Enterprise, AI, DevOps
+          Mobile, Enterprise, AI, E-commerce
           <br />— Powered by Rapid Apps
         </motion.h1>
 
@@ -136,55 +208,75 @@ const PortfolioSection = () => {
                 text={category.text}
                 gradient={category.gradient}
                 borderColor={category.borderColor}
+                onClick={() => setActiveCategory(category.text)}
+                isActive={activeCategory === category.text}
               />
             ))}
           </div>
         </motion.div>
 
-        {/* Portfolio Images */}
-        <div className="relative max-w-6xl mx-auto px-2 sm:px-4 py-10">
-          <motion.div
-            transition={{ duration: 1, ease: "easeInOut" }}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            {/* ✅ Scrollable on Mobile */}
-            <div className="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 sm:hidden">
-              {imageUrls.map((url, i) => (
-                <div
-                  key={i}
-                  className="relative min-w-[220px] h-[420px] rounded-xl overflow-hidden flex-shrink-0 snap-center"
-                >
-                  <Image
-                    src={url}
-                    alt={`Portfolio item ${i + 1}`}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              ))}
-            </div>
+        {/* Portfolio Images - Refined Overlapping Layout (No Gaps) */}
+        <div className="relative w-full py-10">
+          <motion.div layout transition={{ duration: 0.5, ease: "easeInOut" }}>
+            <AnimatePresence mode="wait">
+              <motion.div 
+                key={activeCategory}
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -50 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-0 max-w-[1400px] mx-auto px-4 items-center"
+              >
+                {orderedItems.map((item, i) => {
+                  const mobileIdx = i === 2 ? 1 : 0;
+                  
+                  return (
+                    <div
+                      key={i}
+                      className={`relative flex items-center justify-center ${
+                        item.type === "web"
+                          ? "col-span-1 sm:col-span-2 lg:col-span-3 h-[240px] sm:h-[350px] lg:h-[480px] z-10"
+                          : `col-span-1 h-[280px] sm:h-[320px] lg:h-[400px] z-20 ${
+                              i === 0 ? "lg:-mr-28" : "lg:-ml-28"
+                            }`
+                      }`}
+                    >
+                      {item.type === "web" ? (
+                        <div className="w-full scale-100 lg:scale-[1.2]">
+                          <WebMockup image={item.url} />
+                        </div>
+                      ) : (
+                        <div className="scale-[0.70] sm:scale-[0.80] lg:scale-[0.85]">
+                          <MobileMockup image={item.url} index={mobileIdx} />
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </motion.div>
+            </AnimatePresence>
 
-            {/* ✅ Grid Layout on Desktop */}
-            <div className="hidden sm:grid grid-cols-1 md:grid-cols-3 gap-6">
-              {imageUrls.map((url, i) => (
-                <div
-                  key={i}
-                  className="relative bg-gray-100 rounded-lg overflow-hidden"
-                  style={{ aspectRatio: "625 / 1235" }}
-                >
-                  <Image
-                    src={url}
-                    alt={`Portfolio item ${i + 1}`}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              ))}
-            </div>
+            {orderedItems.length === 0 && (
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="text-gray-500 mt-10 text-center"
+              >
+                No projects found in this category.
+              </motion.p>
+            )}
           </motion.div>
         </div>
+
+        <style jsx global>{`
+          .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+          }
+          .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+        `}</style>
       </div>
     </div>
   );

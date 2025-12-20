@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-
-
 @font-face {
   font-family: 'ModernataSerif';
   src: url('/fonts/ModerataSerif_bold_italic.woff2') format('opentype');
@@ -13,37 +9,7 @@
   font-style: normal;
 }
 
-
-
-/* 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-} */
-
-@layer utilities {
-
-}
-
+@layer utilities {}
 
 @layer base {
   :root {
@@ -73,6 +39,7 @@ body {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -100,61 +67,290 @@ body {
     --chart-5: 340 75% 55%
   }
 
-
-
   body {
     @apply bg-background text-foreground;
     font-family: 'Figtree', sans-serif;
     border: 0;
+  }
 }
-
-
-
-    /* Apply background image in the light theme */
-    /* body {
-      @apply bg-background text-foreground;
-      background-image: url('./images//bg.svg');
-      background-color: #f6f2ea;
-      background-position: 0 0, 0 0;
-      background-size: auto, auto;
-      border-radius: 36px;
-      max-width: 1440px;
-      margin-left: auto;
-      margin-right: auto;
-    
-
-
-
-      
-    } */
-  
-    /* Apply background image in dark theme */
-    /* .dark body {
-       background-image: url('./images/bg.svg');
-     
-      background-color: #f6f2ea;
-      background-position: 0 0, 0 0;
-      background-size: auto, auto;
-      border-radius: 36px;
-      max-width: 1440px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-   */
-
-
-
-}
-
-
-
-
 
 @layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Mobile Mockup Styles */
+.iphone-case {
+  --border-radius-outer: 2rem;
+  --outer-padding: 0.5rem;
+  --case-color: hsl(0, 0%, 0%);
+  --border-radius-inner: calc(var(--border-radius-outer) - var(--outer-padding));
+  box-shadow: 0px 0px 0px 2px white;
+  background-color: var(--case-color);
+  border-radius: var(--border-radius-outer);
+  padding: var(--outer-padding);
+  width: min(250px);
+  aspect-ratio: 1/2;
+  position: relative;
+  margin-inline: auto;
+}
+
+.iphone-case>.gradient-container {
+  position: absolute;
+  inset: var(--outer-padding);
+  border-radius: var(--border-radius-inner);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.iphone-case .gradient-1,
+.iphone-case .gradient-2 {
+  --start-color: hsl(0, 0%, 0%);
+  --shadow-x: 2px;
+  height: 50%;
+  border-radius: 50%;
+  background-color: var(--base-color, #fdc1f7);
+  box-shadow: 0px 2px 10px var(--base-color);
+  background-size: 100% 200%;
+}
+
+.iphone-case .gradient-1 {
+  --gradient-stop-1: 30%;
+  border-top-left-radius: var(--border-radius-inner);
+  border-top-right-radius: var(--border-radius-inner);
+  border-bottom: 3px solid var(--base-color);
+  box-shadow: 0px 2px 4px var(--base-color);
+  background-image: -webkit-radial-gradient(circle, var(--start-color) var(--gradient-stop-1), var(--color-stop-center), var(--base-color) 90%);
+  background-image: radial-gradient(circle, var(--start-color) var(--gradient-stop-1), var(--color-stop-center), var(--base-color) 90%);
+  background-position: 50% 200%;
+  background-size: 100% 200%;
+}
+
+.iphone-case .gradient-2 {
+  --gradient-stop-1: 65%;
+  --gradient-stop-2: 80%;
+  border-bottom-left-radius: var(--border-radius-inner);
+  border-bottom-right-radius: var(--border-radius-inner);
+  border-top: 3px solid var(--base-color);
+  box-shadow: 0px -2px 4px var(--base-color);
+  background-image: -webkit-radial-gradient(circle, var(--start-color) var(--gradient-stop-1), var(--color-2, hsl(0, 0%, 0%)) var(--gradient-stop-2), var(--base-color) 100%);
+  background-image: radial-gradient(circle, var(--start-color) var(--gradient-stop-1), var(--color-2, hsl(0, 0%, 0%)) var(--gradient-stop-2), var(--base-color) 100%);
+  background-position: 50% 100%;
+}
+
+.case-1 .gradient-1 {
+  --base-color: #fdc1f7;
+  --color-stop-center: #230a77, #c84fe4;
+}
+
+.case-1 .gradient-2 {
+  --color-2: #400898;
+  --base-color: #8778d1;
+}
+
+.case-2 .gradient-1 {
+  --color-stop-center: #e51605, #ff8914;
+  --base-color: #fff98c;
+}
+
+.case-2 .gradient-2 {
+  --color-2: #a04613;
+  --base-color: #ffd2a6;
+}
+
+.case-3 .gradient-1 {
+  --base-color: #b2a4e5;
+  --color-stop-center: #0909ca;
+}
+
+.case-3 .gradient-2 {
+  --color-2: #3b1ea3;
+  --base-color: #b2a4e5;
+}
+
+.case-4 .gradient-1 {
+  --base-color: #f5f0f6;
+  --color-stop-center: #7f26c5;
+}
+
+.case-4 .gradient-2 {
+  --color-2: #2b5588;
+  --base-color: #83addc;
+}
+
+.iphone-case:before {
+  content: '';
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 1.3rem;
+  background-color: var(--case-color);
+  width: 22%;
+  border-radius: 25px;
+  z-index: 20;
+}
+
+.iphone-screen {
+  position: absolute;
+  inset: var(--outer-padding);
+  border-radius: var(--border-radius-inner);
+  overflow: hidden;
+  z-index: 10;
+  background: white;
+}
+
+/* Laptop Mockup Styles */
+:root {
+  --default-laptop-shadow: 0 25px 35px -5px rgba(0, 0, 0, 0.5);
+}
+
+.object-laptop {
+  position: relative;
+  width: 100%;
+}
+
+.object-laptop .screen {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid rgba(0, 0, 0, .5);
+  box-shadow:
+    0 0 0 3px rgba(64, 64, 64, 1),
+    inset 0 0 100px 0 rgba(0, 0, 0, .75),
+    var(--default-laptop-shadow);
+  background-color: #1a1a1a;
+  border-radius: 7px 7px 0 0;
+}
+
+.object-laptop .screen::before {
+  display: block;
+  position: relative;
+  content: "";
+  padding-top: 62.5%;
+}
+
+.object-laptop .lcd {
+  position: absolute;
+  top: 3.5%;
+  left: 2.5%;
+  bottom: 3.5%;
+  right: 2.5%;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #000 #202020 #282828 #000;
+  border-radius: 3px;
+  background-color: #000;
+  box-shadow: inset 0 0 200px 2px rgba(255, 255, 255, .05);
+}
+
+.object-laptop .lcd img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.object-laptop .gloss {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 7px 0 0 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 50%);
+  pointer-events: none;
+}
+
+.object-laptop .reflexion {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 7px 0 0 0;
+  background: linear-gradient(100deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, .05) 0.1%, rgba(255, 255, 255, .1) 33%, rgba(0, 0, 0, 0) 33.1%);
+  pointer-events: none;
+}
+
+.object-laptop .highlight {
+  position: absolute;
+  border-radius: 7px;
+  pointer-events: none;
+}
+
+.object-laptop .highlight.one {
+  top: -4px;
+  left: 2%;
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 15%, rgba(0, 0, 0, 0) 100%);
+}
+
+.object-laptop .highlight.two {
+  top: 2%;
+  left: -4px;
+  width: 2px;
+  height: 80%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.25) 15%, rgba(0, 0, 0, 0) 100%);
+}
+
+.object-laptop .keyboard {
+  position: relative;
+  width: 100%;
+}
+
+.object-laptop .keyboard.one {
+  height: 4px;
+  border-radius: 1px 1px 0 0;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, .5) 0%, rgba(0, 0, 0, .75) 2%, rgba(0, 0, 0, .33) 7%, rgba(0, 0, 0, 0) 100%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .33) 93%, rgba(0, 0, 0, .75) 98%, rgba(255, 255, 255, .5) 100%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, .35) 33%, rgba(255, 255, 255, .35) 35%, rgba(0, 0, 0, 0) 100%),
+    linear-gradient(0deg, rgba(20, 20, 20, 1) 0%, rgba(20, 20, 20, 1) 100%);
+}
+
+.object-laptop .keyboard.one::after {
+  display: inline-block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 10%;
+  height: 4px;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .5) 12%, rgba(0, 0, 0, .5) 90%, rgba(0, 0, 0, 1) 100%);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .2);
+}
+
+.object-laptop .keyboard.two {
+  height: 12px;
+  border-radius: 0 0 20px 20px;
+  box-shadow:
+    0 -2px 0 -1px rgba(0, 0, 0, .5),
+    var(--default-laptop-shadow);
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, .35) 0%, rgba(0, 0, 0, .75) 2%, rgba(0, 0, 0, .5) 7%, rgba(0, 0, 0, 0) 50%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .5) 83%, rgba(0, 0, 0, .75) 98%, rgba(255, 255, 255, .35) 100%),
+    linear-gradient(0deg, rgba(0, 0, 0, .75) 0%, rgba(0, 0, 0, .25) 33%, rgba(255, 255, 255, 1) 34%, rgba(255, 255, 255, 1) 100%),
+    linear-gradient(0deg, rgba(200, 200, 200, 1) 0%, rgba(200, 200, 200, 1) 100%);
+}
+
+.object-laptop .keyboard.two::after {
+  display: inline-block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 10%;
+  height: 6px;
+  background: linear-gradient(0deg, rgba(255, 255, 255, .75) 0%, rgba(0, 0, 0, .5) 100%);
+  box-shadow: inset 0 -1px 3px 1px rgba(0, 0, 0, .2);
+  border-radius: 0 0 6px 6px;
 }
