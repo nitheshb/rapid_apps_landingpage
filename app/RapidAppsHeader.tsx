@@ -313,7 +313,7 @@ const RapidAppsHeader = () => {
                               <div className="grid grid-cols-3 gap-6 mb-6">
                                 <div id="w-node-_69db2219-6491-359a-c9b5-7f81a146b49e-11f6dcc5" className="ws-navbar-menu-item-wrapper mobile-margin-0">
                                   <Link
-                                    href="/case-studies/beis"
+                                    href="/case-studies/fashions "
                                     className="nav_text-wrap nav_link w-inline-block"
                                     onClick={() => setOpenDropdown(null)}
                                     tabIndex={0}
@@ -323,9 +323,9 @@ const RapidAppsHeader = () => {
                                         <img src="https://cdn.prod.website-files.com/616f0a7a027baaf59a43390b/65049ac866fad7588452d9ab_Group%205711.png" loading="lazy" alt="" className="nav_caase-study-thumbnail" />
                                       </div>
                                       <div>
-                                        <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16 mb-2">BÉIS</h6>
+                                        <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16 mb-2">Fashions</h6>
                                         <p className="nav-dropdown_sub-text">
-                                          BÉIS app sees 67% higher conversion rate
+                                          Kalki Fashions app sees 67% higher conversion rate
                                         </p>
                                       </div>
                                     </div>
@@ -355,7 +355,7 @@ const RapidAppsHeader = () => {
 
                                 <div id="w-node-_5b497bc4-df34-cb12-0cfa-f0b4e65f8129-11f6dcc5" className="ws-navbar-menu-item-wrapper mobile-margin-0">
                                   <Link
-                                    href="/case-studies/beis-3"
+                                    href="/case-studies/cluck-and-egg"
                                     className="nav_text-wrap nav_link w-inline-block"
                                     onClick={() => setOpenDropdown(null)}
                                     tabIndex={0}
@@ -365,9 +365,9 @@ const RapidAppsHeader = () => {
                                         <img src="/Food1.jpg" loading="lazy" alt="Cluck & Egg" className="nav_caase-study-thumbnail" />
                                       </div>
                                       <div>
-                                        <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16 mb-2">Cluck & Egg</h6>
+                                        <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16 mb-2">BÉIS 3</h6>
                                         <p className="nav-dropdown_sub-text">
-                                          Cluck & Egg drives 35% more morning orders
+                                          BÉIS app sees 67% higher conversion rate
                                         </p>
                                       </div>
                                     </div>

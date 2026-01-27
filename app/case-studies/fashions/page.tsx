@@ -71,10 +71,11 @@ const BeisCaseStudyPage = () => {
                                     →
                                 </h5>
 
+
                                 {/* Bottom Row */}
                                 <div className={`flex items-center gap-2 transition-transform duration-500 ease-in-out origin-left ${(isScrolled && !isOverDarkSection) ? "scale-[0.78]" : "scale-100"}`}>
                                     <span className="font-extrabold leading-none text-[36px] transition-all duration-500 ease-in-out whitespace-nowrap">
-                                        BÉIS
+                                        Kalki Fashions
                                     </span>
                                     <span className={`px-3 py-1 bg-[#F2FC54] text-black text-xs font-bold uppercase tracking-wider  ${(isScrolled && !isOverDarkSection) ? "scale-90" : "scale-100"} transition-transform`}>
                                         Travel
@@ -90,7 +91,7 @@ const BeisCaseStudyPage = () => {
                                         Social
                                     </span>
                                     <a
-                                        href="https://www.instagram.com/beis/"
+                                        href="https://www.instagram.com/kalkifashion"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className={`flex items-center ${isScrolled ? "gap-0" : "gap-2"} hover:opacity-80 transition-opacity`}
@@ -111,7 +112,7 @@ const BeisCaseStudyPage = () => {
                                             <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                                         </svg>
                                         <span className={`text-sm font-medium transition-all duration-500 ease-in-out ${(isScrolled && !isOverDarkSection) ? "w-0 overflow-hidden opacity-0" : "text-white w-auto opacity-100"}`}>
-                                            @beis
+                                            @Kalki Fashions
                                         </span>
                                     </a>
                                 </div>
@@ -123,7 +124,7 @@ const BeisCaseStudyPage = () => {
                                         Website
                                     </span>
                                     <a
-                                        href="https://beistravel.com/"
+                                        href="https://www.kalkifashion.com/"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className={`flex items-center ${isScrolled ? "gap-0" : "gap-2"} hover:opacity-80 transition-opacity`}
@@ -144,7 +145,7 @@ const BeisCaseStudyPage = () => {
                                             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
                                         </svg>
                                         <span className={`text-sm font-medium transition-all duration-500 ease-in-out ${(isScrolled && !isOverDarkSection) ? "w-0 overflow-hidden opacity-0" : "text-white w-auto opacity-100"}`}>
-                                            beistravel.com
+                                            Kalki Fashions.com
                                         </span>
                                     </a>
                                 </div>
@@ -321,7 +322,7 @@ const BeisCaseStudyPage = () => {
                                         className="text-[36px] font-bold leading-tight max-w-xl"
                                         style={{ fontFamily: 'owner, sans-serif' }}
                                     >
-                                        BÉIS keeps customers engaged (and spending 19% more) with its mobile app
+                                        Kalki Fashions keeps customers engaged (and spending 19% more) with its mobile app
                                     </h1>
                                 </div>
 
@@ -394,12 +395,12 @@ const BeisCaseStudyPage = () => {
                     <div className="prose prose-lg max-w-none text-gray-800">
                         <div className="mb-12">
                             <h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">About the Brand</h6>
-                            <h2 className="text-3xl font-bold mb-6">BÉIS is famous for luxurious-but-affordable on the go and travel accessories.</h2>
+                            <h2 className="text-3xl font-bold mb-6">Kalki Fashions is renowned for its luxurious yet accessible ethnic and occasion wear.</h2>
                             <p className="mb-6">
-                                Meet BÉIS, a on the go and travel accessory company that&apos;s surely all over your Instagram feed. Founded by actress <a href="#" className="text-blue-600 hover:underline">Shay Mitchell</a>, the brand sells luxurious but reasonably-priced travel gear perfect for making its customers look stylish on the go.
+                                Meet Kalki Fashions, a contemporary Indian fashion brand that’s become a staple for weddings and celebrations across the globe. Known for blending traditional craftsmanship with modern design, Kalki offers premium-quality ethnic wear at approachable prices—perfect for making a statement at every special occasion.
                             </p>
                             <p className="mb-6">
-                                Recently we sat down with Julie Chalker, VP of Digital & eCommerce at BÉIS, to discuss how BÉIS is using its mobile app to improve retention and help build a loyal community.
+                                Recently, we connected with the Kalki Fashions team to explore how the brand leverages its digital platforms to enhance customer experience, drive retention, and build a loyal community of fashion-forward shoppers.
                             </p>
                             <blockquote className="border-l-4 border-gray-900 pl-6 italic my-8 text-xl text-gray-700 bg-gray-50 p-6 rounded-r-lg">
                                 “We don't want our consumers to ever have to choose between form and function. And ultimately, our end goal is to get our product into your hands, keep you organized, and looking good.”
@@ -408,16 +409,16 @@ const BeisCaseStudyPage = () => {
 
                         <div className="mb-12">
                             <h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">The Challenge</h6>
-                            <h2 className="text-3xl font-bold mb-6">BÉIS saw an app as an opportunity to diversify, scale, and boost customer loyalty.</h2>
+                            <h2 className="text-3xl font-bold mb-6">KALKI Fashion saw a mobile app as an opportunity to expand digitally, scale faster, and strengthen customer loyalty.</h2>
                             <p className="mb-6">
-                                Unlike many RapidApps customers, BÉIS didn't turn to a mobile app to solve a problem. There was no challenge. Instead, the company saw an <em>opportunity</em>.
+                                Unlike many brands that build apps to fix immediate challenges, KALKI Fashion’s approach was driven by vision rather than necessity. There was no single pain point to solve. Instead, the brand identified a powerful opportunity—to create a seamless, personalized shopping experience that brings its luxury ethnic wear closer to customers, deepens engagement, and builds long-term relationships beyond traditional eCommerce.
                             </p>
                             <blockquote className="border-l-4 border-gray-900 pl-6 italic my-8 text-xl text-gray-700 bg-gray-50 p-6 rounded-r-lg">
                                 “We want to be where the consumer is, but we also want to be where we think the consumer is going to be in the future… And so I thought of introducing a mobile application not just as another revenue channel for us, but also to introduce an additional way for us to have an experience for our consumers. A two-way conversation. It was kind of a no-brainer”
-                                <footer className="text-base font-bold text-gray-900 mt-4 not-italic">— Julie Chalker, VP of Digital & E-Commerce</footer>
+
                             </blockquote>
                             <p className="mb-6">
-                                The three goals that matter most to Julie and her team are:
+                                The three goals that matter most to our team are:
                             </p>
                             <ol className="list-decimal pl-6 mb-6 space-y-2 font-medium">
                                 <li>Driving profitable growth</li>
@@ -428,21 +429,20 @@ const BeisCaseStudyPage = () => {
 
                         <div className="mb-12">
                             <h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">The Solution</h6>
-                            <h2 className="text-3xl font-bold mb-6">The BÉIS app is a low-lift lever that builds a loyal community with exclusivity.</h2>
+                            <h2 className="text-3xl font-bold mb-6">The KALKI Fashion app became a low-lift channel for building a loyal community through exclusivity and convenience.</h2>
                             <p className="mb-6">
-                                Because RapidApps is designed to be an extension of a company’s Shopify store, BÉIS found that its new mobile app was super low lift. That means, according to Julie, that the channel fits seamlessly into the existing operational and marketing approach.
+                                With RapidApps designed as a seamless extension of KALKI Fashion’s Shopify store, launching the mobile app required minimal operational overhead. The app fit naturally into the brand’s existing workflows, allowing the team to maintain consistency across inventory, marketing, and customer experience. According to the KALKI Fashion team, this made the app an easy and efficient way to deepen customer engagement while offering a more personalized and premium shopping journey.
                             </p>
                             <blockquote className="border-l-4 border-gray-900 pl-6 italic my-8 text-xl text-gray-700 bg-gray-50 p-6 rounded-r-lg">
                                 “Our consumers are highly engaged, very enthusiastic on social, and all they want is more content outside of our product, whether it's behind the scenes at our photo shoots or exclusive interviews with Shay… Being able to bring [the content] into our app has been a real benefit and a big draw.”
-                                <footer className="text-base font-bold text-gray-900 mt-4 not-italic">— Julie Chalker, VP of Digital & E-Commerce</footer>
                             </blockquote>
                         </div>
 
                         <div className="mb-12">
                             <h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">The Results</h6>
-                            <h2 className="text-3xl font-bold mb-6">Nobody buys a suitcase every month, but BÉIS’s app keeps customers close until they’re ready.</h2>
+                            <h2 className="text-3xl font-bold mb-6">Customers may not shop for occasion wear every month, but the KALKI Fashion app keeps them engaged until the next celebration.</h2>
                             <p className="mb-6">
-                                When we talked to Julie, she was quick to mention that when she looked at the metrics and conversion rates of the app versus the website, the mobile app numbers were really, really strong.
+                                When reviewing performance metrics, the KALKI Fashion team quickly noticed a strong difference between the app and the website. App users showed higher engagement and conversion rates, proving that the mobile experience played a key role in keeping customers connected to the brand—whether they were actively shopping for a wedding, festival, or simply browsing for inspiration for their next big moment.
                             </p>
                             <blockquote className="border-l-4 border-[#fdc1f7] pl-6 italic my-8 text-xl text-gray-700 bg-[#fff5fe] p-6 rounded-r-lg">
                                 “For the last couple of months, we've seen around 12% growth in terms of the revenue that's coming from those push notifications. And again, those are free, right?”
@@ -454,7 +454,7 @@ const BeisCaseStudyPage = () => {
                     {/* Bottom CTA */}
                     <div className="bg-black text-white rounded-2xl p-12 text-center mt-16">
                         <h2 className="text-2xl md:text-3xl font-bold mb-8">
-                            Find out how BÉIS and top brands — like Princess Polly, Aviator Nation, and Glamnetic — are breaking boundaries and sales records with RapidApps.
+                            Discover how KALKI Fashion — along with other leading brands in fashion and lifestyle — is breaking boundaries and boosting sales with RapidApps.
                         </h2>
                         <a
                             href="https://www.tapcart.com/demo"
