@@ -24,15 +24,24 @@ import jewelary from "../public/jewelary.jpg";
 import jewellery2 from "../public/jewellery2.jpg";
 import cluck_egg from "../public/cluck_egg.jpg";
 import jewellery_web from "../public/jewellery_web.png";
+import Food1 from "../public/Food1.jpg";
+import cluckEgg from "../public/cluck&Egg.png";
+import Food2 from "../public/Food2.jpg";
+import kalki from "../public/kalki.png";
+import women from "../public/women.jpeg";
+import women2 from "../public/women2.jpeg";
+import Tanishq from "../public/Tanishq.jpg";
+import Tanishq2 from "../public/Tanishq2.jpg";
+import Tanishq3 from "../public/Tanishq3.jpg";
 
 const MobileMockup = ({ image, index }: { image: any; index: number }) => {
   const caseClass = `case-${(index % 4) + 1}`;
-  
+
   // Side-ways tilt: First item tilts left, second tilts right (mirroring)
   const isFirst = index === 0;
-  
+
   return (
-    <div 
+    <div
       className={`iphone-case ${caseClass} scale-[0.85] sm:scale-100 transition-transform duration-500 ease-out hover:rotate-0`}
       style={{
         transform: `rotate(${isFirst ? '-8deg' : '8deg'})`
@@ -68,9 +77,9 @@ const WebMockup = ({ image }: { image: any }) => {
 };
 
 const portfolioItems = [
-  { url: jewelary, categories: ["Jewellery"], type: "mobile" },
+  { url: Tanishq2, categories: ["Jewellery"], type: "mobile" },
   { url: jewellery_web, categories: ["Jewellery"], type: "web" },
-  { url: jewellery2, categories: ["Jewellery"], type: "mobile" },
+  { url: Tanishq3, categories: ["Jewellery"], type: "mobile" },
   { url: jewelary, categories: ["Clothing"], type: "mobile" },
   { url: nonasties_web, categories: ["Clothing"], type: "web" },
   { url: d4, categories: ["Clothing"], type: "mobile" },
@@ -85,6 +94,15 @@ const portfolioItems = [
   { url: cluck_egg, categories: ["E-commerce", "Management"], type: "mobile" },
   { url: cluck_egg, categories: ["E-commerce", "Management"], type: "web" },
   { url: d5, categories: ["Agriculture"], type: "mobile" },
+  { url: Food1, categories: ["Food & Beverage"], type: "mobile" },
+  { url: cluckEgg, categories: ["Food & Beverage"], type: "web" },
+  { url: Food2, categories: ["Food & Beverage"], type: "mobile" },
+  { url: women, categories: ["Fashion"], type: "mobile" },
+  { url: kalki, categories: ["Fashion"], type: "web" },
+  { url: women2, categories: ["Fashion"], type: "mobile" },
+  { url: women, categories: ["Apparel"], type: "mobile" },
+  { url: kalki, categories: ["Apparel"], type: "web" },
+  { url: women2, categories: ["Apparel"], type: "mobile" },
 ];
 
 const categories = [
@@ -94,39 +112,29 @@ const categories = [
     borderColor: "#1D4ED8",
   },
   {
-    text: "Clothing",
-    gradient: "linear-gradient(#22C55E, #16A34A)",
-    borderColor: "#16A34A",
+    text: "Fashion",
+    gradient: "linear-gradient(#FB923C, #F97316)",
+    borderColor: "#F97316",
   },
   {
-    text: "Poultry",
+    text: "Beauty & Cosmetics",
     gradient: "linear-gradient(#A855F7, #9333EA)",
     borderColor: "#9333EA",
   },
   {
-    text: "Task",
+    text: "Food & Beverage",
     gradient: "linear-gradient(#FACC15, #EAB308)",
     borderColor: "#EAB308",
   },
   {
-    text: "E-commerce",
+    text: "Health & Wellness",
     gradient: "linear-gradient(#F472B6, #EC4899)",
     borderColor: "#EC4899",
   },
   {
-    text: "Logistics",
-    gradient: "linear-gradient(#818CF8, #6366F1)",
-    borderColor: "#6366F1",
-  },
-  {
-    text: "Agriculture",
-    gradient: "linear-gradient(#34D399, #10B981)",
-    borderColor: "#10B981",
-  },
-  {
-    text: "Management",
-    gradient: "linear-gradient(#FB923C, #F97316)",
-    borderColor: "#F97316",
+    text: "Apparel",
+    gradient: "linear-gradient(#22C55E, #16A34A)",
+    borderColor: "#16A34A",
   },
 ];
 
@@ -190,7 +198,7 @@ const PortfolioSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
         >
-          Mobile, Enterprise, AI, E-commerce
+          Converting Web Apps into Native Mobile Apps
           <br />— Powered by Rapid Apps
         </motion.h1>
 
@@ -219,7 +227,7 @@ const PortfolioSection = () => {
         <div className="relative w-full py-10">
           <motion.div layout transition={{ duration: 0.5, ease: "easeInOut" }}>
             <AnimatePresence mode="wait">
-              <motion.div 
+              <motion.div
                 key={activeCategory}
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -229,17 +237,15 @@ const PortfolioSection = () => {
               >
                 {orderedItems.map((item, i) => {
                   const mobileIdx = i === 2 ? 1 : 0;
-                  
+
                   return (
                     <div
                       key={i}
-                      className={`relative flex items-center justify-center ${
-                        item.type === "web"
-                          ? "col-span-1 sm:col-span-2 lg:col-span-3 h-[240px] sm:h-[350px] lg:h-[480px] z-10"
-                          : `col-span-1 h-[280px] sm:h-[320px] lg:h-[400px] z-20 ${
-                              i === 0 ? "lg:-mr-28" : "lg:-ml-28"
-                            }`
-                      }`}
+                      className={`relative flex items-center justify-center ${item.type === "web"
+                        ? "col-span-1 sm:col-span-2 lg:col-span-3 h-[240px] sm:h-[350px] lg:h-[480px] z-10"
+                        : `col-span-1 h-[280px] sm:h-[320px] lg:h-[400px] z-20 ${i === 0 ? "lg:-mr-28" : "lg:-ml-28"
+                        }`
+                        }`}
                     >
                       {item.type === "web" ? (
                         <div className="w-full scale-100 lg:scale-[1.2]">
