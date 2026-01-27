@@ -15,6 +15,7 @@ const RapidAppsHeader = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [showAllCaseStudies, setShowAllCaseStudies] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -263,7 +264,7 @@ const RapidAppsHeader = () => {
                   tabIndex={0}
                   style={{ borderColor: "rgba(0, 0, 0, 0)" }}
                 >
-                  <div className="ws-navbar-text text-gray-700 font-medium hover:text-gray-900">Why Tapcart</div>
+                  <div className="ws-navbar-text text-gray-700 font-medium hover:text-gray-900">Why RapidApps</div>
                   <div className="ws-navbar-icon w-embed ml-2">
                     <svg width="12" height="11" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M1 6C1 6 6.08629 7.2 7 12C7.91371 7.2 13 6 13 6" stroke="#1B191B" strokeWidth="2"></path>
@@ -284,7 +285,7 @@ const RapidAppsHeader = () => {
                       aria-labelledby="w-dropdown-toggle-0"
                       style={{
                         width: "100vw",
-                        height: "337px",
+                        height: showAllCaseStudies ? "500px" : "350px",
                         borderTop: "none",
                         borderTopLeftRadius: "0",
                         borderTopRightRadius: "0",
@@ -304,7 +305,7 @@ const RapidAppsHeader = () => {
                                 >
                                   <div className="heading-xxsmall is-nav-menu-category">Case Studies</div>
                                   <div className="nav-dropdown_subhead-text">
-                                    See how Shopify's fastest-growing brands boosted their bottom line with Tapcart
+                                    See how Shopify's fastest-growing brands boosted their bottom line with RapidApps
                                   </div>
                                 </Link>
                               </div>
@@ -333,19 +334,19 @@ const RapidAppsHeader = () => {
 
                                 <div id="w-node-_69db2219-6491-359a-c9b5-7f81a146b48e-11f6dcc5" className="ws-navbar-menu-item-wrapper mobile-margin-0">
                                   <Link
-                                    href="https://www.tapcart.com/case-studies/lskd"
+                                    href="/case-studies/beis-2"
                                     className="nav_text-wrap nav_link w-inline-block"
                                     onClick={() => setOpenDropdown(null)}
                                     tabIndex={0}
                                   >
                                     <div className="case-study-item">
                                       <div className="nav_caase-study-thumbnail">
-                                        <img src="https://cdn.prod.website-files.com/616f0a7a027baaf59a43390b/65d92140310a84fca4b0a2d9_LSKD.avif" loading="lazy" alt="" className="nav_caase-study-thumbnail" />
+                                        <img src="https://cdn.prod.website-files.com/616f0a7a027baaf59a43390b/65049ac866fad7588452d9ab_Group%205711.png" loading="lazy" alt="" className="nav_caase-study-thumbnail" />
                                       </div>
                                       <div>
-                                        <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16 mb-2">LSKD</h6>
+                                        <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16 mb-2">BÉIS 2</h6>
                                         <p className="nav-dropdown_sub-text">
-                                          LSKD's bold app marketing strategy drives 40% of BFCM sales
+                                          BÉIS app sees 67% higher conversion rate
                                         </p>
                                       </div>
                                     </div>
@@ -354,36 +355,98 @@ const RapidAppsHeader = () => {
 
                                 <div id="w-node-_5b497bc4-df34-cb12-0cfa-f0b4e65f8129-11f6dcc5" className="ws-navbar-menu-item-wrapper mobile-margin-0">
                                   <Link
-                                    href="https://www.tapcart.com/case-studies/princess-polly"
+                                    href="/case-studies/beis-3"
                                     className="nav_text-wrap nav_link w-inline-block"
                                     onClick={() => setOpenDropdown(null)}
                                     tabIndex={0}
                                   >
                                     <div className="case-study-item">
                                       <div className="nav_caase-study-thumbnail">
-                                        <img src="https://cdn.prod.website-files.com/616f0a7a027baaf59a43390b/666a40bac0927561f37eb0aa_princesspolly-nav.webp" loading="lazy" alt="" className="nav_caase-study-thumbnail" />
+                                        <img src="https://cdn.prod.website-files.com/616f0a7a027baaf59a43390b/65049ac866fad7588452d9ab_Group%205711.png" loading="lazy" alt="" className="nav_caase-study-thumbnail" />
                                       </div>
                                       <div>
-                                        <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16 mb-2">Princess Polly</h6>
+                                        <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16 mb-2">BÉIS 3</h6>
                                         <p className="nav-dropdown_sub-text">
-                                          Princess Polly sees a 98.4% in-app user retention rate
+                                          BÉIS app sees 67% higher conversion rate
                                         </p>
                                       </div>
                                     </div>
                                   </Link>
                                 </div>
+
+                                {showAllCaseStudies && (
+                                  <>
+                                    <div className="ws-navbar-menu-item-wrapper mobile-margin-0">
+                                      <Link
+                                        href="/case-studies/beis-4"
+                                        className="nav_text-wrap nav_link w-inline-block"
+                                        onClick={() => setOpenDropdown(null)}
+                                        tabIndex={0}
+                                      >
+                                        <div className="case-study-item">
+                                          <div className="nav_caase-study-thumbnail">
+                                            <img src="https://cdn.prod.website-files.com/616f0a7a027baaf59a43390b/65049ac866fad7588452d9ab_Group%205711.png" loading="lazy" alt="" className="nav_caase-study-thumbnail" />
+                                          </div>
+                                          <div>
+                                            <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16 mb-2">BÉIS 4</h6>
+                                            <p className="nav-dropdown_sub-text">
+                                              BÉIS app sees 67% higher conversion rate
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </Link>
+                                    </div>
+
+                                    <div className="ws-navbar-menu-item-wrapper mobile-margin-0">
+                                      <Link
+                                        href="/case-studies/beis-5"
+                                        className="nav_text-wrap nav_link w-inline-block"
+                                        onClick={() => setOpenDropdown(null)}
+                                        tabIndex={0}
+                                      >
+                                        <div className="case-study-item">
+                                          <div className="nav_caase-study-thumbnail">
+                                            <img src="https://cdn.prod.website-files.com/616f0a7a027baaf59a43390b/65049ac866fad7588452d9ab_Group%205711.png" loading="lazy" alt="" className="nav_caase-study-thumbnail" />
+                                          </div>
+                                          <div>
+                                            <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16 mb-2">BÉIS 5</h6>
+                                            <p className="nav-dropdown_sub-text">
+                                              BÉIS app sees 67% higher conversion rate
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </Link>
+                                    </div>
+                                  </>
+                                )}
                               </div>
 
                               <Link
                                 id="w-node-_69db2219-6491-359a-c9b5-7f81a146b4b1-11f6dcc5"
-                                href="/case-studies"
+                                href="#"
                                 className="nav_text-wrap new-nav-learn-more w-inline-block"
-                                onClick={() => setOpenDropdown(null)}
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  setShowAllCaseStudies(!showAllCaseStudies);
+                                }}
                                 tabIndex={0}
                               >
                                 <div className="nav_button-text-wrap">
                                   <div className="nav-dropdown_read-more_link-wrapper">
-                                    <div className="nav-dropdown_read-more-text">View all case studies &gt;</div>
+                                    <div className="nav-dropdown_read-more-text">
+                                      {showAllCaseStudies ? "View less case studies" : "View all case studies"}
+                                    </div>
+                                    <svg
+                                      className="nav-dropdown_read-more-icon"
+                                      width="12"
+                                      height="12"
+                                      viewBox="0 0 12 12"
+                                      fill="none"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      style={{ transform: showAllCaseStudies ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.2s" }}
+                                    >
+                                      <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
                                   </div>
                                 </div>
                               </Link>
@@ -394,11 +457,14 @@ const RapidAppsHeader = () => {
                               <div className="mobile-margin-bottom-12">
                                 <div className="heading-xxsmall is-nav-menu-category">By Industry</div>
                                 <div className="nav-dropdown_subhead-text">
-                                  See how Tapcart supports DTC brands on Shopify across industries
+                                  See how RapidApps supports DTC brands on Shopify across industries
                                 </div>
                               </div>
 
                               <div>
+                                <div className="nav_button-text-wrap">
+                                  <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16">Jewellary</h6>
+                                </div>
                                 <Link
                                   href="/industries/fashion-apparel"
                                   className="nav_text-wrap nav_link w-inline-block"
@@ -506,7 +572,7 @@ const RapidAppsHeader = () => {
                                 >
                                   <div className="heading-xxsmall is-nav-menu-category">Features</div>
                                   <div className="nav-dropdown_subhead-text">
-                                    From push notifications to proprietary analytics, see all that Tapcart has to offer
+                                    From push notifications to proprietary analytics, see all that RapidApps has to offer
                                   </div>
                                 </Link>
                               </div>
@@ -520,7 +586,7 @@ const RapidAppsHeader = () => {
                                   tabIndex={0}
                                 >
                                   <div className="nav_button-text-wrap flex items-center gap-2 mb-1">
-                                    <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16 ai-gradient">Tapcart AI</h6>
+                                    <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16 ai-gradient">RapidApps AI</h6>
                                     <div className="text-style_menu-item_badge ai">New</div>
                                   </div>
                                   <p className="nav-dropdown_sub-text">
@@ -765,7 +831,7 @@ const RapidAppsHeader = () => {
                     {/* Mobile navigation items */}
                     <div className="border-b border-gray-200">
                       <button className="flex items-center justify-between w-full py-3 text-gray-900 font-medium">
-                        Why Tapcart
+                        Why RapidApps
                         <svg width="12" height="11" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg" className="ml-2">
                           <path d="M1 6C1 6 6.08629 7.2 7 12C7.91371 7.2 13 6 13 6" stroke="#1B191B" strokeWidth="2"></path>
                         </svg>
