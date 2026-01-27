@@ -334,19 +334,19 @@ const RapidAppsHeader = () => {
 
                                 <div id="w-node-_69db2219-6491-359a-c9b5-7f81a146b48e-11f6dcc5" className="ws-navbar-menu-item-wrapper mobile-margin-0">
                                   <Link
-                                    href="/case-studies/beis-2"
+                                    href="/case-studies/tanishq"
                                     className="nav_text-wrap nav_link w-inline-block"
                                     onClick={() => setOpenDropdown(null)}
                                     tabIndex={0}
                                   >
                                     <div className="case-study-item">
                                       <div className="nav_caase-study-thumbnail">
-                                        <img src="https://cdn.prod.website-files.com/616f0a7a027baaf59a43390b/65049ac866fad7588452d9ab_Group%205711.png" loading="lazy" alt="" className="nav_caase-study-thumbnail" />
+                                        <img src="/Tanishq2.jpg" loading="lazy" alt="Tanishq" className="nav_caase-study-thumbnail" />
                                       </div>
                                       <div>
-                                        <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16 mb-2">BÉIS 2</h6>
+                                        <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16 mb-2">Tanishq</h6>
                                         <p className="nav-dropdown_sub-text">
-                                          BÉIS app sees 67% higher conversion rate
+                                          Tanishq app sees 45% higher conversion rate
                                         </p>
                                       </div>
                                     </div>
@@ -362,12 +362,12 @@ const RapidAppsHeader = () => {
                                   >
                                     <div className="case-study-item">
                                       <div className="nav_caase-study-thumbnail">
-                                        <img src="https://cdn.prod.website-files.com/616f0a7a027baaf59a43390b/65049ac866fad7588452d9ab_Group%205711.png" loading="lazy" alt="" className="nav_caase-study-thumbnail" />
+                                        <img src="/Food1.jpg" loading="lazy" alt="Cluck & Egg" className="nav_caase-study-thumbnail" />
                                       </div>
                                       <div>
-                                        <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16 mb-2">Cluck and Egg</h6>
+                                        <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16 mb-2">BÉIS 3</h6>
                                         <p className="nav-dropdown_sub-text">
-                                          Cluck and Egg
+                                          BÉIS app sees 67% higher conversion rate
                                         </p>
                                       </div>
                                     </div>
@@ -463,7 +463,7 @@ const RapidAppsHeader = () => {
 
                               <div>
                                 <div className="nav_button-text-wrap">
-                                  <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16">Jewellary</h6>
+                                  <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16">Jewellery</h6>
                                 </div>
                                 <Link
                                   href="/industries/fashion-apparel"

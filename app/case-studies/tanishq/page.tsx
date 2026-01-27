@@ -1,13 +1,14 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import RapidAppsHeader from "../../RapidAppsHeader";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
-const FoodBeverageCaseStudyPage = () => {
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [isOverDarkSection, setIsOverDarkSection] = useState(false);
+const TanishqCaseStudyPage = () => {
+    const [hoveredItem, setHoveredItem] = React.useState<string | null>(null);
+    const [isScrolled, setIsScrolled] = React.useState(false);
+    const [isOverDarkSection, setIsOverDarkSection] = React.useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -62,11 +63,11 @@ const FoodBeverageCaseStudyPage = () => {
                                 </h5>
 
                                 <div className={`flex items-center gap-2 transition-transform duration-500 ease-in-out origin-left ${(isScrolled && !isOverDarkSection) ? "scale-[0.78]" : "scale-100"}`}>
-                                    <span className="font-extrabold leading-none text-[36px] transition-all duration-500 ease-in-out whitespace-nowrap uppercase">
-                                        Cluck & Egg
+                                    <span className="font-extrabold leading-none text-[36px] transition-all duration-500 ease-in-out whitespace-nowrap">
+                                        TANISHQ
                                     </span>
-                                    <span className={`px-3 py-1 bg-green-600 text-white text-xs font-bold uppercase tracking-wider  ${(isScrolled && !isOverDarkSection) ? "scale-90" : "scale-100"} transition-transform`}>
-                                        Food & Beverage
+                                    <span className={`px-3 py-1 bg-[#D4AF37] text-white text-xs font-bold uppercase tracking-wider  ${(isScrolled && !isOverDarkSection) ? "scale-90" : "scale-100"} transition-transform`}>
+                                        Jewellery
                                     </span>
                                 </div>
                             </div>
@@ -77,16 +78,43 @@ const FoodBeverageCaseStudyPage = () => {
                                         }`}>
                                         Social
                                     </span>
-                                    <div className={`flex items-center ${isScrolled ? "gap-0" : "gap-2"}`}>
+                                    <a
+                                        href="https://www.instagram.com/tanishqjewellery/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`flex items-center ${isScrolled ? "gap-0" : "gap-2"} hover:opacity-80 transition-opacity`}
+                                    >
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`transition-colors duration-500 ease-in-out ${(isScrolled && !isOverDarkSection) ? "text-black" : "text-white"}`}>
                                             <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
                                             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                                             <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                                         </svg>
                                         <span className={`text-sm font-medium transition-all duration-500 ease-in-out ${(isScrolled && !isOverDarkSection) ? "w-0 overflow-hidden opacity-0" : "text-white w-auto opacity-100"}`}>
-                                            @cluckandegg
+                                            @tanishqjewellery
                                         </span>
-                                    </div>
+                                    </a>
+                                </div>
+
+                                <div className={`flex flex-col gap-1 transition-all duration-500 ease-in-out ${(isScrolled && !isOverDarkSection) ? "justify-center" : ""}`}>
+                                    <span className={`text-[16px] font-extrabold uppercase tracking-wider transition-all duration-500 ease-in-out ${(isScrolled && !isOverDarkSection) ? "opacity-0 max-h-0 overflow-hidden text-black" : "text-white max-h-[24px]"
+                                        }`}>
+                                        Website
+                                    </span>
+                                    <a
+                                        href="https://www.tanishq.co.in/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`flex items-center ${isScrolled ? "gap-0" : "gap-2"} hover:opacity-80 transition-opacity`}
+                                    >
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`transition-colors duration-500 ease-in-out ${(isScrolled && !isOverDarkSection) ? "text-black" : "text-white"}`}>
+                                            <circle cx="12" cy="12" r="10" />
+                                            <line x1="2" x2="22" y1="12" y2="12" />
+                                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                                        </svg>
+                                        <span className={`text-sm font-medium transition-all duration-500 ease-in-out ${(isScrolled && !isOverDarkSection) ? "w-0 overflow-hidden opacity-0" : "text-white w-auto opacity-100"}`}>
+                                            tanishq.co.in
+                                        </span>
+                                    </a>
                                 </div>
 
                                 <div className="flex items-center gap-3 transition-all duration-500 ease-in-out">
@@ -126,44 +154,54 @@ const FoodBeverageCaseStudyPage = () => {
                     <div className="max-w-7xl mx-auto px-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                             <div className="relative h-[500px] w-full flex items-center justify-center perspective-[2000px] group">
-                                <div className="phone-3d-container relative w-[260px] h-[520px]" style={{ transformStyle: "preserve-3d" }}>
+                                <div className="phone-3d-container relative w-[260px] h-[520px] transition-transform duration-500 ease-out" style={{ transformStyle: "preserve-3d" }}>
                                     <img
-                                        src="/Food1.jpg"
-                                        alt="Cluck & Egg App"
+                                        src="/Tanishq2.jpg"
+                                        alt="Tanishq App"
                                         className="w-full h-full object-cover rounded-[3rem] shadow-2xl border-[8px] border-[#1a1a1a]"
                                     />
-                                    <div className="absolute -top-10 -left-20 w-40 h-40 bg-green-500/20 blur-3xl rounded-full" />
+                                    {/* Abstract floating elements to mimic Beis page */}
+                                    <motion.div
+                                        animate={{ y: [0, -20, 0] }}
+                                        transition={{ duration: 4, repeat: Infinity }}
+                                        className="absolute -top-10 -left-20 w-40 h-40 bg-[#D4AF37]/20 blur-3xl rounded-full"
+                                    />
+                                    <motion.div
+                                        animate={{ y: [0, 20, 0] }}
+                                        transition={{ duration: 5, repeat: Infinity }}
+                                        className="absolute -bottom-10 -right-20 w-40 h-40 bg-[#D4AF37]/10 blur-3xl rounded-full"
+                                    />
                                 </div>
                             </div>
 
                             <div className="space-y-8">
                                 <h1 className="text-[42px] font-bold leading-tight max-w-xl italic font-serif">
-                                    Cluck & Egg drives 35% more morning orders with its proprietary delivery app
+                                    Tanishq redefines luxury shopping with 25% higher repeat purchases via mobile
                                 </h1>
 
                                 <div className="grid grid-cols-3 gap-6 border-t border-gray-800 pt-8">
                                     <div>
-                                        <div className="text-[56px] font-bold mb-2 leading-none text-green-500">
-                                            55%
+                                        <div className="text-[56px] font-bold mb-2 leading-none text-[#D4AF37]">
+                                            45%
                                         </div>
                                         <p className="text-[18px] leading-snug text-gray-300">
-                                            increase in breakfast retention
+                                            higher conversion on app vs web
                                         </p>
                                     </div>
                                     <div>
-                                        <div className="text-[56px] font-bold mb-2 leading-none text-green-500">
-                                            3x
+                                        <div className="text-[56px] font-bold mb-2 leading-none text-[#D4AF37]">
+                                            2.5x
                                         </div>
                                         <p className="text-[18px] leading-snug text-gray-300">
-                                            faster checkout than mobile web
+                                            increase in store appointments
                                         </p>
                                     </div>
                                     <div>
-                                        <div className="text-[56px] font-bold mb-2 leading-none text-green-500">
-                                            $0
+                                        <div className="text-[56px] font-bold mb-2 leading-none text-[#D4AF37]">
+                                            30%
                                         </div>
                                         <p className="text-[18px] leading-snug text-gray-300">
-                                            ad cost for push re-engagement
+                                            growth in loyalty sign-ups
                                         </p>
                                     </div>
                                 </div>
@@ -172,44 +210,52 @@ const FoodBeverageCaseStudyPage = () => {
                     </div>
                 </div>
 
-                {/* Article Content */}
+                {/* Main Content Body */}
                 <div className="max-w-4xl mx-auto px-4 py-16 md:py-24">
                     <div className="prose prose-lg max-w-none text-gray-800">
                         <div className="mb-12">
                             <h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">About the Brand</h6>
-                            <h2 className="text-3xl font-bold mb-6">Cluck & Egg is the go-to for farm-fresh, sustainable breakfast on the move.</h2>
+                            <h2 className="text-3xl font-bold mb-6">Tanishq is the gold standard for premium, heritage-inspired jewellery.</h2>
                             <p className="mb-6">
-                                Cluck & Egg started with a simple mission: better breakfast. By sourcing locally and focusing on high-quality ingredients, they&apos;ve built a cult following of health-conscious morning commuters who don&apos;t want to sacrifice quality for speed.
+                                Meet Tanishq, a Tata brand that has become India’s most trusted name for exquisite craftsmanship. From bridal masterpieces to contemporary daily wear, Tanishq designs are rooted in deep cultural heritage while embracing the needs of the modern woman.
                             </p>
-                            <blockquote className="border-l-4 border-green-600 pl-6 italic my-8 text-xl text-gray-700 bg-green-50 p-6 rounded-r-lg">
-                                “Our customers are in a hurry, but they care about where their food comes from. The app is our way of respecting their time while maintaining that personal farm-to-table connection.”
+                            <blockquote className="border-l-4 border-[#D4AF37] pl-6 italic my-8 text-xl text-gray-700 bg-[#fdf9f1] p-6 rounded-r-lg">
+                                “We don't want our customers to feel like they’re just buying jewellery; we want them to feel like they’re preserving a memory. Our mission is to combine the warmth of a showroom with the speed of a smartphone.”
                             </blockquote>
                         </div>
 
                         <div className="mb-12">
                             <h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">The Challenge</h6>
-                            <h2 className="text-3xl font-bold mb-6">Cluck & Egg needed to beat the &quot;morning rush&quot; friction that killed web conversions.</h2>
+                            <h2 className="text-3xl font-bold mb-6">Tanishq saw an app as the ultimate bridge between physical luxury and digital ease.</h2>
                             <p className="mb-6">
-                                Browsing a menu on a slow mobile website while standing in line or sitting on a train is a bad experience. Cluck & Egg needed a native environment where a customer could order their usual in under 10 seconds.
+                                Jewellery has traditionally been an &apos;in-person&apos; purchase. The challenge wasn&apos;t just selling online; it was replicating the trust, detail-oriented browsing, and emotional connection of a physical store on a 6-inch screen.
                             </p>
+                            <ol className="list-decimal pl-6 mb-6 space-y-2 font-medium">
+                                <li>Building high-ticket digital trust for gold and diamonds.</li>
+                                <li>Creating personalized curation for diverse customer milstones.</li>
+                                <li>Bridging app browsing with in-store showroom appointments.</li>
+                            </ol>
                         </div>
 
                         <div className="mb-12">
                             <h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">The Solution</h6>
-                            <h2 className="text-3xl font-bold mb-6">A high-speed, retention-focused app built on RapidApps.</h2>
+                            <h2 className="text-3xl font-bold mb-6">The Tanishq app is a virtual showroom prioritizing detail and storytelling.</h2>
                             <p className="mb-6">
-                                With RapidApps, Cluck & Egg launched an app that remembers order history, offers one-tap &quot;re-order my usual&quot;, and uses geo-fenced push notifications to remind customers to order when they are near a pick-up point.
+                                Because RapidApps integrates directly with Tanishq&apos;s commerce backend, the transition to mobile was effortless. The app allows customers to zoom into the finest filigree work, track daily gold rates, and access exclusive &quot;App-Only&quot; launches.
                             </p>
+                            <blockquote className="border-l-4 border-[#D4AF37] pl-6 italic my-8 text-xl text-gray-700 bg-[#fdf9f1] p-6 rounded-r-lg">
+                                “Our collectors are highly discerning. They want to see every facet of a diamond and every curve of a gold bangle. RapidApps gave us the high-performance UI needed to showcase our craftsmanship.”
+                            </blockquote>
                         </div>
 
                         <div className="mb-12">
                             <h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">The Results</h6>
-                            <h2 className="text-3xl font-bold mb-6">Subscription-like loyalty without the subscription fees.</h2>
+                            <h2 className="text-3xl font-bold mb-6">Milestone purchases are rare, but the Tanishq app ensures lifelong loyalty.</h2>
                             <p className="mb-6">
-                                The app has turned occasional visitors into daily regulars. With a 55% increase in retention and checkout speeds that blow the old website out of the water, Cluck & Egg has secured its spot as a leader in digital F&B.
+                                The metrics showed a clear success: app users converted at a significantly higher rate than desktop users. More importantly, the app became the primary driver for store visits and high-value consultations.
                             </p>
                             <blockquote className="border-l-4 border-black pl-6 italic my-8 text-xl text-gray-700 bg-gray-50 p-6 rounded-r-lg">
-                                “We&apos;ve seen 35% growth in morning revenue since launching the app. Our push notifications have a higher open rate than any email we&apos;ve ever sent.”
+                                “We’ve seen a 25% increase in repeat purchases. Push notifications for anniversary reminders and festival launches have turned our app into a personal concierge for our customers.”
                             </blockquote>
                         </div>
                     </div>
@@ -217,24 +263,25 @@ const FoodBeverageCaseStudyPage = () => {
                     {/* Bottom CTA */}
                     <div className="bg-black text-white rounded-2xl p-12 text-center mt-16">
                         <h2 className="text-2xl md:text-3xl font-bold mb-8 italic font-serif">
-                            Grow your F&B brand with RapidApps.
+                            Elevate your luxury brand with RapidApps.
                         </h2>
                         <Link
                             href="/"
-                            className="inline-flex items-center justify-center px-8 py-4 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-colors gap-2"
+                            className="inline-flex items-center justify-center px-8 py-4 bg-[#D4AF37] text-white font-bold rounded-lg hover:bg-[#b8962f] transition-colors gap-2"
                         >
-                            Get Started
+                            Let&apos;s BUILD
                             <span>→</span>
                         </Link>
                     </div>
                 </div>
             </div>
 
+            {/* Footer Placeholder for consistency */}
             <footer className="bg-black text-white py-12 border-t border-gray-800 text-center">
-                <p>© 2024 RapidApps Inc. • Food & Beverage Showcase</p>
+                <p>© 2024 RapidApps Inc. • Luxury Jewellery Edition</p>
             </footer>
         </div>
     );
 };
 
-export default FoodBeverageCaseStudyPage;
+export default TanishqCaseStudyPage;

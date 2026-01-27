@@ -26,44 +26,44 @@ const backgroundImages = [
 const industries = [
   {
     icon: <Tv size={60} />,
-    title: "OTT & Streaming",
+    title: "Jewellery",
     description: "Engaging apps for content delivery and subscriptions.",
   },
   {
     icon: <ShoppingCart size={60} />,
-    title: "E-commerce",
+    title: "Fashion",
     description: "Secure, scalable shopping apps.",
   },
   {
     icon: <GraduationCap size={60} />,
-    title: "EdTech",
+    title: "Apparel",
     description: "Intuitive platforms for learning.",
   },
   {
     icon: <CreditCard size={60} />,
-    title: "Fintech",
+    title: "Beauty & Cosmetics",
     description: "Secure payment and finance apps.",
   },
   {
-    icon: <Heart size={60} />,
-    title: "Healthcare",
-    description: "Apps for remote care and wellness.",
-  },
-  {
     icon: <Truck size={60} />,
-    title: "Logistics",
+    title: "Food & Beverage",
     description: "Apps for tracking, routing and fleets.",
   },
-  {
-    icon: <Gamepad2 size={60} />,
-    title: "Gaming",
-    description: "Fun, real-time interactive mobile games.",
+    {
+    icon: <Heart size={60} />,
+    title: "Health & Wellness",
+    description: "Apps for remote care and wellness.",
   },
-  {
-    icon: <Camera size={60} />,
-    title: "Social Media",
-    description: "Media apps for sharing and connecting.",
-  },
+  // {
+  //   icon: <Gamepad2 size={60} />,
+  //   title: "Gaming",
+  //   description: "Fun, real-time interactive mobile games.",
+  // },
+  // {
+  //   icon: <Camera size={60} />,
+  //   title: "Social Media",
+  //   description: "Media apps for sharing and connecting.",
+  // },
 ];
 
 const IndustryShowcaseBox = () => {
