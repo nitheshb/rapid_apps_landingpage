@@ -313,7 +313,7 @@ const RapidAppsHeader = () => {
                               <div className="grid grid-cols-3 gap-6 mb-6">
                                 <div id="w-node-_69db2219-6491-359a-c9b5-7f81a146b49e-11f6dcc5" className="ws-navbar-menu-item-wrapper mobile-margin-0">
                                   <Link
-                                    href="/case-studies/fashions"
+                                    href="/case-studies/fashions "
                                     className="nav_text-wrap nav_link w-inline-block"
                                     onClick={() => setOpenDropdown(null)}
                                     tabIndex={0}

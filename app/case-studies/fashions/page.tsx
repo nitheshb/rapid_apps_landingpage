@@ -71,6 +71,7 @@ const BeisCaseStudyPage = () => {
                                     →
                                 </h5>
 
+
                                 {/* Bottom Row */}
                                 <div className={`flex items-center gap-2 transition-transform duration-500 ease-in-out origin-left ${(isScrolled && !isOverDarkSection) ? "scale-[0.78]" : "scale-100"}`}>
                                     <span className="font-extrabold leading-none text-[36px] transition-all duration-500 ease-in-out whitespace-nowrap">
