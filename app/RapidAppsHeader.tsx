@@ -16,6 +16,7 @@ const RapidAppsHeader = () => {
   const [scrolled, setScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [showAllCaseStudies, setShowAllCaseStudies] = useState(false);
+  const [mobileSectionExpanded, setMobileSectionExpanded] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -155,8 +156,8 @@ const RapidAppsHeader = () => {
         
         .new-ws-navbar-layout {
           display: grid;
-          grid-template-columns: 74% 28%;
-          gap: 0;
+          grid-template-columns: 3fr 1fr;
+          gap: 24px;
         }
         
         .ws-nav-left {
@@ -251,7 +252,7 @@ const RapidAppsHeader = () => {
 
             {/* Desktop Navigation */}
             <nav ref={dropdownRef} className="hidden md:flex items-center space-x-16">
-              {/* Why Tapcart Dropdown */}
+              {/* Why Rapid Apps Dropdown */}
               <div className="dropdown-item w-dropdown static" style={{ maxWidth: "1280px" }}>
                 <button
                   onClick={() => handleDropdownClick("why-tapcart")}
@@ -285,7 +286,7 @@ const RapidAppsHeader = () => {
                       aria-labelledby="w-dropdown-toggle-0"
                       style={{
                         width: "100vw",
-                        height: showAllCaseStudies ? "500px" : "350px",
+                        height: "auto",
                         borderTop: "none",
                         borderTopLeftRadius: "0",
                         borderTopRightRadius: "0",
@@ -320,10 +321,10 @@ const RapidAppsHeader = () => {
                                   >
                                     <div className="case-study-item">
                                       <div className="nav_caase-study-thumbnail">
-                                        <img src="https://cdn.prod.website-files.com/616f0a7a027baaf59a43390b/65049ac866fad7588452d9ab_Group%205711.png" loading="lazy" alt="" className="nav_caase-study-thumbnail" />
+                                        <img src="https://ik.imagekit.io/4sjmoqtje/tr:w-180,c-at_max/cdn/shop/files/kalki-logo.svg?v=1737539097" loading="lazy" alt="" className="nav_caase-study-thumbnail" style={{ objectFit: "contain", padding: "12px" }} />
                                       </div>
                                       <div>
-                                        <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16 mb-2">Fashions</h6>
+                                        <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16 mb-2"> Kalki Fashions</h6>
                                         <p className="nav-dropdown_sub-text">
                                           Kalki Fashions app sees 67% higher conversion rate
                                         </p>
@@ -365,9 +366,9 @@ const RapidAppsHeader = () => {
                                         <img src="/Food1.jpg" loading="lazy" alt="Cluck & Egg" className="nav_caase-study-thumbnail" />
                                       </div>
                                       <div>
-                                        <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16 mb-2">BÉIS 3</h6>
+                                        <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16 mb-2">Cluck & Egg</h6>
                                         <p className="nav-dropdown_sub-text">
-                                          BÉIS app sees 67% higher conversion rate
+                                          Cluck & Egg app sees 67% higher conversion rate
                                         </p>
                                       </div>
                                     </div>
@@ -399,19 +400,19 @@ const RapidAppsHeader = () => {
 
                                     <div className="ws-navbar-menu-item-wrapper mobile-margin-0">
                                       <Link
-                                        href="/case-studies/beis-5"
+                                        href="/case-studies/supply6"
                                         className="nav_text-wrap nav_link w-inline-block"
                                         onClick={() => setOpenDropdown(null)}
                                         tabIndex={0}
                                       >
                                         <div className="case-study-item">
                                           <div className="nav_caase-study-thumbnail">
-                                            <img src="https://cdn.prod.website-files.com/616f0a7a027baaf59a43390b/65049ac866fad7588452d9ab_Group%205711.png" loading="lazy" alt="" className="nav_caase-study-thumbnail" />
+                                            <img src="https://supplysix.com/cdn/shop/files/Supply_6_logo_6_2_280x.png?v=1717677528" loading="lazy" alt="" className="nav_caase-study-thumbnail" style={{ objectFit: "contain", padding: "12px" }} />
                                           </div>
                                           <div>
-                                            <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16 mb-2">BÉIS 5</h6>
+                                            <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16 mb-2">Supply6</h6>
                                             <p className="nav-dropdown_sub-text">
-                                              BÉIS app sees 67% higher conversion rate
+                                              Supply6 app sees 67% higher conversion rate
                                             </p>
                                           </div>
                                         </div>
@@ -830,12 +831,85 @@ const RapidAppsHeader = () => {
                   <nav className="flex flex-col px-6 py-4 space-y-0 owners-text">
                     {/* Mobile navigation items */}
                     <div className="border-b border-gray-200">
-                      <button className="flex items-center justify-between w-full py-3 text-gray-900 font-medium">
+                      <button
+                        className="flex items-center justify-between w-full py-3 text-gray-900 font-medium"
+                        onClick={() => setMobileSectionExpanded(mobileSectionExpanded === 'why-rapidapps' ? null : 'why-rapidapps')}
+                      >
                         Why RapidApps
-                        <svg width="12" height="11" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg" className="ml-2">
+                        <svg
+                          width="12"
+                          height="11"
+                          viewBox="0 0 14 13"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className={`ml-2 transform transition-transform ${mobileSectionExpanded === 'why-rapidapps' ? 'rotate-180' : ''}`}
+                        >
                           <path d="M1 6C1 6 6.08629 7.2 7 12C7.91371 7.2 13 6 13 6" stroke="#1B191B" strokeWidth="2"></path>
                         </svg>
                       </button>
+
+                      <AnimatePresence>
+                        {mobileSectionExpanded === 'why-rapidapps' && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            className="overflow-hidden bg-gray-50 rounded-lg mb-2"
+                          >
+                            <div className="p-4 space-y-6">
+                              {/* Case Studies Section */}
+                              <div>
+                                <h6 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Case Studies</h6>
+                                <div className="space-y-4">
+                                  <Link href="/case-studies/fashions" className="flex items-start gap-3" onClick={() => setMobileMenuOpen(false)}>
+                                    <div className="w-12 h-12 bg-gray-200 rounded flex-shrink-0 overflow-hidden">
+                                      <img src="https://cdn.prod.website-files.com/616f0a7a027baaf59a43390b/65049ac866fad7588452d9ab_Group%205711.png" alt="" className="w-full h-full object-cover" />
+                                    </div>
+                                    <div>
+                                      <p className="text-sm font-medium text-gray-900">Fashions</p>
+                                      <p className="text-xs text-gray-500 mt-1">67% higher conversion rate</p>
+                                    </div>
+                                  </Link>
+
+                                  <Link href="/case-studies/tanishq" className="flex items-start gap-3" onClick={() => setMobileMenuOpen(false)}>
+                                    <div className="w-12 h-12 bg-gray-200 rounded flex-shrink-0 overflow-hidden">
+                                      <img src="/Tanishq2.jpg" alt="" className="w-full h-full object-cover" />
+                                    </div>
+                                    <div>
+                                      <p className="text-sm font-medium text-gray-900">Tanishq</p>
+                                      <p className="text-xs text-gray-500 mt-1">45% higher conversion rate</p>
+                                    </div>
+                                  </Link>
+
+                                  <Link href="/case-studies/cluck-and-egg" className="flex items-start gap-3" onClick={() => setMobileMenuOpen(false)}>
+                                    <div className="w-12 h-12 bg-gray-200 rounded flex-shrink-0 overflow-hidden">
+                                      <img src="/Food1.jpg" alt="" className="w-full h-full object-cover" />
+                                    </div>
+                                    <div>
+                                      <p className="text-sm font-medium text-gray-900">BÉIS 3</p>
+                                      <p className="text-xs text-gray-500 mt-1">67% higher conversion rate</p>
+                                    </div>
+                                  </Link>
+                                </div>
+                                <Link href="/case-studies" className="inline-block mt-4 text-sm font-semibold text-blue-600" onClick={() => setMobileMenuOpen(false)}>
+                                  View all case studies →
+                                </Link>
+                              </div>
+
+                              {/* Industries Section */}
+                              <div className="pt-4 border-t border-gray-200">
+                                <h6 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">By Industry</h6>
+                                <div className="space-y-2">
+                                  <Link href="/industries/fashion-apparel" className="block text-sm text-gray-700 hover:text-blue-600" onClick={() => setMobileMenuOpen(false)}>Fashion & Apparel</Link>
+                                  <Link href="/industries/beauty-cosmetics" className="block text-sm text-gray-700 hover:text-blue-600" onClick={() => setMobileMenuOpen(false)}>Beauty & Cosmetics</Link>
+                                  <Link href="/industries/food-beverage" className="block text-sm text-gray-700 hover:text-blue-600" onClick={() => setMobileMenuOpen(false)}>Food & Beverage</Link>
+                                  <Link href="/industries/health-wellness" className="block text-sm text-gray-700 hover:text-blue-600" onClick={() => setMobileMenuOpen(false)}>Health & Wellness</Link>
+                                </div>
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
 
                     <div className="border-b border-gray-200">
