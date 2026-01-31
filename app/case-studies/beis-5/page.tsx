@@ -74,10 +74,10 @@ const BeisCaseStudyPage = () => {
                                 {/* Bottom Row */}
                                 <div className={`flex items-center gap-2 transition-transform duration-500 ease-in-out origin-left ${(isScrolled && !isOverDarkSection) ? "scale-[0.78]" : "scale-100"}`}>
                                     <span className="font-extrabold leading-none text-[36px] transition-all duration-500 ease-in-out whitespace-nowrap">
-                                        BÉIS
+                                        Cluck And Egg
                                     </span>
                                     <span className={`px-3 py-1 bg-[#F2FC54] text-black text-xs font-bold uppercase tracking-wider  ${(isScrolled && !isOverDarkSection) ? "scale-90" : "scale-100"} transition-transform`}>
-                                        Travel
+                                        Food
                                     </span>
                                 </div>
                             </div>
@@ -111,7 +111,7 @@ const BeisCaseStudyPage = () => {
                                             <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                                         </svg>
                                         <span className={`text-sm font-medium transition-all duration-500 ease-in-out ${(isScrolled && !isOverDarkSection) ? "w-0 overflow-hidden opacity-0" : "text-white w-auto opacity-100"}`}>
-                                            @beis
+                                            @CluckAndEgg
                                         </span>
                                     </a>
                                 </div>
@@ -317,12 +317,13 @@ const BeisCaseStudyPage = () => {
                             {/* Right Column: Content */}
                             <div className="space-y-8">
                                 <div className="space-y-4">
-                                    <h1
-                                        className="text-[36px] font-bold leading-tight max-w-xl"
-                                        style={{ fontFamily: 'owner, sans-serif' }}
-                                    >
-                                        BÉIS keeps customers engaged (and spending 19% more) with its mobile app
-                                    </h1>
+                                  <h1
+  className="text-[36px] font-bold leading-tight max-w-xl"
+  style={{ fontFamily: 'owner, sans-serif' }}
+>
+  Cluck And Egg keeps customers coming back with fresh, farm-to-home products
+</h1>
+
                                 </div>
 
                                 {/* Stats Grid */}
@@ -393,38 +394,70 @@ const BeisCaseStudyPage = () => {
                     {/* Article Content */}
                     <div className="prose prose-lg max-w-none text-gray-800">
                         <div className="mb-12">
-                            <h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">About the Brand</h6>
-                            <h2 className="text-3xl font-bold mb-6">BÉIS is famous for luxurious-but-affordable on the go and travel accessories.</h2>
-                            <p className="mb-6">
-                                Meet BÉIS, a on the go and travel accessory company that&apos;s surely all over your Instagram feed. Founded by actress <a href="#" className="text-blue-600 hover:underline">Shay Mitchell</a>, the brand sells luxurious but reasonably-priced travel gear perfect for making its customers look stylish on the go.
-                            </p>
-                            <p className="mb-6">
-                                Recently we sat down with Julie Chalker, VP of Digital & eCommerce at BÉIS, to discuss how BÉIS is using its mobile app to improve retention and help build a loyal community.
-                            </p>
-                            <blockquote className="border-l-4 border-gray-900 pl-6 italic my-8 text-xl text-gray-700 bg-gray-50 p-6 rounded-r-lg">
-                                “We don't want our consumers to ever have to choose between form and function. And ultimately, our end goal is to get our product into your hands, keep you organized, and looking good.”
-                            </blockquote>
-                        </div>
+  <h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">
+    About the Brand
+  </h6>
 
-                        <div className="mb-12">
-                            <h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">The Challenge</h6>
-                            <h2 className="text-3xl font-bold mb-6">BÉIS saw an app as an opportunity to diversify, scale, and boost customer loyalty.</h2>
-                            <p className="mb-6">
-                                Unlike many RapidApps customers, BÉIS didn't turn to a mobile app to solve a problem. There was no challenge. Instead, the company saw an <em>opportunity</em>.
-                            </p>
-                            <blockquote className="border-l-4 border-gray-900 pl-6 italic my-8 text-xl text-gray-700 bg-gray-50 p-6 rounded-r-lg">
-                                “We want to be where the consumer is, but we also want to be where we think the consumer is going to be in the future… And so I thought of introducing a mobile application not just as another revenue channel for us, but also to introduce an additional way for us to have an experience for our consumers. A two-way conversation. It was kind of a no-brainer”
-                                <footer className="text-base font-bold text-gray-900 mt-4 not-italic">— Julie Chalker, VP of Digital & E-Commerce</footer>
-                            </blockquote>
-                            <p className="mb-6">
-                                The three goals that matter most to Julie and her team are:
-                            </p>
-                            <ol className="list-decimal pl-6 mb-6 space-y-2 font-medium">
-                                <li>Driving profitable growth</li>
-                                <li>Diversifying acquisition strategies</li>
-                                <li>Increasing customer retention</li>
-                            </ol>
-                        </div>
+  <h2 className="text-3xl font-bold mb-6">
+    Cluck And Egg is known for delivering fresh, farm-quality eggs and poultry you can trust.
+  </h2>
+
+  <p className="mb-6">
+    Meet Cluck And Egg, a farm-to-home food brand focused on providing fresh eggs and
+    responsibly sourced poultry straight from local farms to customers’ doorsteps.
+    Built on transparency and quality, Cluck And Egg makes everyday essentials healthier
+    and more reliable for families.
+  </p>
+
+  <p className="mb-6">
+    We recently spoke with the Cluck And Egg operations and digital team to understand how
+    the brand is using its mobile app to simplify ordering, improve customer retention,
+    and build long-term trust with its community.
+  </p>
+
+  <blockquote className="border-l-4 border-gray-900 pl-6 italic my-8 text-xl text-gray-700 bg-gray-50 p-6 rounded-r-lg">
+    “Our goal is simple — deliver fresh, ethically sourced eggs and poultry while making
+    healthy food accessible and convenient for every household.”
+  </blockquote>
+</div>
+
+
+                       <div className="mb-12">
+  <h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">
+    The Challenge
+  </h6>
+
+  <h2 className="text-3xl font-bold mb-6">
+    Cluck And Egg saw its app as a way to scale operations and build lasting customer trust.
+  </h2>
+
+  <p className="mb-6">
+    Unlike many food delivery brands, Cluck And Egg didn’t build a mobile app to fix a
+    broken process. Instead, the team saw an <em>opportunity</em> to connect directly
+    with customers, simplify repeat orders, and guarantee freshness from farm to home.
+  </p>
+
+  <blockquote className="border-l-4 border-gray-900 pl-6 italic my-8 text-xl text-gray-700 bg-gray-50 p-6 rounded-r-lg">
+    “We wanted to meet customers where they are — on their phones — while also building
+    a more transparent, reliable food supply experience. The app isn’t just a sales
+    channel; it’s a two-way relationship that helps us deliver better quality and
+    consistency every time.”
+    <footer className="text-base font-bold text-gray-900 mt-4 not-italic">
+      — Operations & Digital Team, Cluck And Egg
+    </footer>
+  </blockquote>
+
+  <p className="mb-6">
+    The three goals that matter most to the Cluck And Egg team are:
+  </p>
+
+  <ol className="list-decimal pl-6 mb-6 space-y-2 font-medium">
+    <li>Scaling fresh food delivery profitably</li>
+    <li>Expanding customer acquisition channels</li>
+    <li>Increasing repeat purchases and retention</li>
+  </ol>
+</div>
+
 
                         <div className="mb-12">
                             <h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">The Solution</h6>

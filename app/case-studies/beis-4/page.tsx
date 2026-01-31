@@ -74,10 +74,10 @@ const BeisCaseStudyPage = () => {
                                 {/* Bottom Row */}
                                 <div className={`flex items-center gap-2 transition-transform duration-500 ease-in-out origin-left ${(isScrolled && !isOverDarkSection) ? "scale-[0.78]" : "scale-100"}`}>
                                     <span className="font-extrabold leading-none text-[36px] transition-all duration-500 ease-in-out whitespace-nowrap">
-                                        BÉIS
+                                       Cluck And Egg
                                     </span>
-                                    <span className={`px-3 py-1 bg-[#F2FC54] text-black text-xs font-bold uppercase tracking-wider  ${(isScrolled && !isOverDarkSection) ? "scale-90" : "scale-100"} transition-transform`}>
-                                        Travel
+                                    <span className={`px-3 py-1 bg-[#F2FC54] relative bottom-2 left-2 text-black text-xs font-bold uppercase tracking-wider  ${(isScrolled && !isOverDarkSection) ? "scale-90" : "scale-100"} transition-transform`}>
+                                        Food
                                     </span>
                                 </div>
                             </div>
@@ -111,7 +111,7 @@ const BeisCaseStudyPage = () => {
                                             <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                                         </svg>
                                         <span className={`text-sm font-medium transition-all duration-500 ease-in-out ${(isScrolled && !isOverDarkSection) ? "w-0 overflow-hidden opacity-0" : "text-white w-auto opacity-100"}`}>
-                                            @beis
+                                           Cluck And Egg
                                         </span>
                                     </a>
                                 </div>
@@ -144,7 +144,7 @@ const BeisCaseStudyPage = () => {
                                             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
                                         </svg>
                                         <span className={`text-sm font-medium transition-all duration-500 ease-in-out ${(isScrolled && !isOverDarkSection) ? "w-0 overflow-hidden opacity-0" : "text-white w-auto opacity-100"}`}>
-                                            beistravel.com
+                                           Cluck And Egg
                                         </span>
                                     </a>
                                 </div>
@@ -317,12 +317,13 @@ const BeisCaseStudyPage = () => {
                             {/* Right Column: Content */}
                             <div className="space-y-8">
                                 <div className="space-y-4">
-                                    <h1
-                                        className="text-[36px] font-bold leading-tight max-w-xl"
-                                        style={{ fontFamily: 'owner, sans-serif' }}
-                                    >
-                                        BÉIS keeps customers engaged (and spending 19% more) with its mobile app
-                                    </h1>
+<h1
+  className="text-[36px] font-bold leading-tight max-w-xl"
+  style={{ fontFamily: 'owner, sans-serif' }}
+>
+  Cluck And Egg keeps customers engaged and coming back with fresh, farm-quality products
+</h1>
+
                                 </div>
 
                                 {/* Stats Grid */}
@@ -346,7 +347,7 @@ const BeisCaseStudyPage = () => {
                                             className="text-[56px] font-bold mb-2 leading-none"
                                             style={{ fontFamily: 'owner, sans-serif', color: '#F2FC54' }}
                                         >
-                                            13%
+                                            100%
                                         </div>
                                         <p
                                             className="text-[18px] leading-snug"
@@ -384,7 +385,7 @@ const BeisCaseStudyPage = () => {
                         <iframe
                             className="w-full h-full"
                             src="https://www.youtube.com/embed/D0Bfj6QaAdU"
-                            title="BÉIS Case Study Video"
+                            title="Cluck And Egg Case Study Video"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                         ></iframe>
@@ -394,13 +395,18 @@ const BeisCaseStudyPage = () => {
                     <div className="prose prose-lg max-w-none text-gray-800">
                         <div className="mb-12">
                             <h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">About the Brand</h6>
-                            <h2 className="text-3xl font-bold mb-6">BÉIS is famous for luxurious-but-affordable on the go and travel accessories.</h2>
-                            <p className="mb-6">
-                                Meet BÉIS, a on the go and travel accessory company that&apos;s surely all over your Instagram feed. Founded by actress <a href="#" className="text-blue-600 hover:underline">Shay Mitchell</a>, the brand sells luxurious but reasonably-priced travel gear perfect for making its customers look stylish on the go.
-                            </p>
-                            <p className="mb-6">
-                                Recently we sat down with Julie Chalker, VP of Digital & eCommerce at BÉIS, to discuss how BÉIS is using its mobile app to improve retention and help build a loyal community.
-                            </p>
+                           <h2 className="text-3xl font-bold mb-6">
+  Cluck And Egg is known for delivering fresh, high-quality eggs and wholesome food essentials you can trust.
+</h2>
+
+<p className="mb-6">
+  Meet <strong>Cluck And Egg</strong>, a farm-to-table brand focused on bringing fresh eggs and nutritious food products straight to your kitchen. Built on quality, transparency, and care, Cluck And Egg makes everyday meals healthier and more reliable for modern households.
+</p>
+
+<p className="mb-6">
+  Recently, we connected with the Cluck And Egg team to understand how they are using digital platforms to improve customer experience, ensure freshness at every step, and build a loyal community that values clean and responsibly sourced food.
+</p>
+
                             <blockquote className="border-l-4 border-gray-900 pl-6 italic my-8 text-xl text-gray-700 bg-gray-50 p-6 rounded-r-lg">
                                 “We don't want our consumers to ever have to choose between form and function. And ultimately, our end goal is to get our product into your hands, keep you organized, and looking good.”
                             </blockquote>
@@ -408,10 +414,14 @@ const BeisCaseStudyPage = () => {
 
                         <div className="mb-12">
                             <h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">The Challenge</h6>
-                            <h2 className="text-3xl font-bold mb-6">BÉIS saw an app as an opportunity to diversify, scale, and boost customer loyalty.</h2>
-                            <p className="mb-6">
-                                Unlike many RapidApps customers, BÉIS didn't turn to a mobile app to solve a problem. There was no challenge. Instead, the company saw an <em>opportunity</em>.
-                            </p>
+                            <h2 className="text-3xl font-bold mb-6">
+  Cluck And Egg saw digital platforms as an opportunity to scale, connect, and build long-term customer trust.
+</h2>
+
+<p className="mb-6">
+  Unlike many growing food brands, Cluck And Egg didn’t turn to technology to fix a problem. There was no crisis to solve. Instead, the team recognized an <em>opportunity</em> to enhance customer experience, streamline access to fresh products, and strengthen loyalty through convenience and transparency.
+</p>
+
                             <blockquote className="border-l-4 border-gray-900 pl-6 italic my-8 text-xl text-gray-700 bg-gray-50 p-6 rounded-r-lg">
                                 “We want to be where the consumer is, but we also want to be where we think the consumer is going to be in the future… And so I thought of introducing a mobile application not just as another revenue channel for us, but also to introduce an additional way for us to have an experience for our consumers. A two-way conversation. It was kind of a no-brainer”
                                 <footer className="text-base font-bold text-gray-900 mt-4 not-italic">— Julie Chalker, VP of Digital & E-Commerce</footer>
@@ -427,11 +437,20 @@ const BeisCaseStudyPage = () => {
                         </div>
 
                         <div className="mb-12">
-                            <h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">The Solution</h6>
-                            <h2 className="text-3xl font-bold mb-6">The BÉIS app is a low-lift lever that builds a loyal community with exclusivity.</h2>
-                            <p className="mb-6">
-                                Because RapidApps is designed to be an extension of a company’s Shopify store, BÉIS found that its new mobile app was super low lift. That means, according to Julie, that the channel fits seamlessly into the existing operational and marketing approach.
-                            </p>
+<h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">
+  The Solution
+</h6>
+
+<h2 className="text-3xl font-bold mb-6">
+  The Cluck And Egg app is a simple, high-impact way to build trust and repeat purchases.
+</h2>
+
+<p className="mb-6">
+  Designed as a seamless extension of Cluck And Egg’s online store, the mobile app was quick and easy to launch.
+  It fits naturally into the brand’s existing operations while giving customers a faster, more reliable way to
+  order fresh eggs and food essentials, stay informed, and feel confident about every purchase.
+</p>
+
                             <blockquote className="border-l-4 border-gray-900 pl-6 italic my-8 text-xl text-gray-700 bg-gray-50 p-6 rounded-r-lg">
                                 “Our consumers are highly engaged, very enthusiastic on social, and all they want is more content outside of our product, whether it's behind the scenes at our photo shoots or exclusive interviews with Shay… Being able to bring [the content] into our app has been a real benefit and a big draw.”
                                 <footer className="text-base font-bold text-gray-900 mt-4 not-italic">— Julie Chalker, VP of Digital & E-Commerce</footer>
@@ -439,11 +458,20 @@ const BeisCaseStudyPage = () => {
                         </div>
 
                         <div className="mb-12">
-                            <h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">The Results</h6>
-                            <h2 className="text-3xl font-bold mb-6">Nobody buys a suitcase every month, but BÉIS’s app keeps customers close until they’re ready.</h2>
-                            <p className="mb-6">
-                                When we talked to Julie, she was quick to mention that when she looked at the metrics and conversion rates of the app versus the website, the mobile app numbers were really, really strong.
-                            </p>
+                            <h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">
+  The Results
+</h6>
+
+<h2 className="text-3xl font-bold mb-6">
+  Customers may not shop daily, but the Cluck And Egg app keeps the brand top of mind when they do.
+</h2>
+
+<p className="mb-6">
+  When the Cluck And Egg team reviewed performance metrics, the difference was clear. Conversion rates and engagement
+  on the mobile app consistently outperformed the mobile website, showing that customers preferred the speed,
+  convenience, and reliability of ordering fresh products through the app.
+</p>
+
                             <blockquote className="border-l-4 border-[#fdc1f7] pl-6 italic my-8 text-xl text-gray-700 bg-[#fff5fe] p-6 rounded-r-lg">
                                 “For the last couple of months, we've seen around 12% growth in terms of the revenue that's coming from those push notifications. And again, those are free, right?”
                                 <footer className="text-base font-bold text-gray-900 mt-4 not-italic">— Julie Chalker, VP of Digital & E-Commerce</footer>
@@ -453,9 +481,10 @@ const BeisCaseStudyPage = () => {
 
                     {/* Bottom CTA */}
                     <div className="bg-black text-white rounded-2xl p-12 text-center mt-16">
-                        <h2 className="text-2xl md:text-3xl font-bold mb-8">
-                            Find out how BÉIS and top brands — like Princess Polly, Aviator Nation, and Glamnetic — are breaking boundaries and sales records with RapidApps.
-                        </h2>
+<h2 className="text-2xl md:text-3xl font-bold mb-8">
+  Discover how Cluck And Egg and other growing food brands are expanding their reach, building customer trust, and driving repeat purchases with RapidApps.
+</h2>
+
                         <a
                             href="https://www.tapcart.com/demo"
                             className="inline-flex items-center justify-center px-8 py-4 bg-white text-black font-bold rounded-lg hover:bg-gray-100 transition-colors gap-2"
@@ -522,10 +551,10 @@ const BeisCaseStudyPage = () => {
                                         <path d="M2 12L12 17L22 12" />
                                     </svg>
                                 </div>
-                                <span className="text-4xl font-black tracking-tighter text-white">RapidApps</span>
+                                <span className="text-4xl font-black tracking-tighter text-white">Cluck And Egg</span>
                             </Link>
                             <div className="flex items-center gap-2 text-[#FDF9F1] hover:text-gray-300 transition-colors">
-                                <a href="mailto:help@rapidapps.co">help@rapidapps.co</a>
+                                <a href="mailto:help@rapidapps.co">help@cluckandegg.co</a>
                                 <img src="https://cdn.prod.website-files.com/616f0a7a027baaf59a43390b/61cc794bf1bf3866eea6eab6_ic_open_in_new_24px%203.svg" alt="" className="w-4 h-4 opacity-70" />
                             </div>
                             <div className="pt-8">
@@ -596,7 +625,7 @@ const BeisCaseStudyPage = () => {
                     {/* Bottom Bar */}
                     <div className="pt-12 border-t border-gray-800 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-16">
                         <div className="flex flex-col md:flex-row gap-8 text-sm text-white">
-                            <span>© Copyright 2024 RapidApps Inc.</span>
+                            <span>© Copyright 2024 cluckandegg Inc.</span>
                             <div className="flex gap-6">
                                 <Link href="#" className="text-white hover:text-gray-300 transition-colors">Terms of Use</Link>
                                 <Link href="#" className="text-white hover:text-gray-300 transition-colors">Privacy Policy</Link>
