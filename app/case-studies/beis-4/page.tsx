@@ -7,7 +7,7 @@ import Script from "next/script";
 
 import { motion, useScroll, useTransform } from "framer-motion";
 
-const BeisCaseStudyPage = () => {
+const PelviniCaseStudyPage = () => {
     const [hoveredItem, setHoveredItem] = React.useState<string | null>(null);
     const [isScrolled, setIsScrolled] = React.useState(false);
 
@@ -47,8 +47,8 @@ const BeisCaseStudyPage = () => {
                 {/* Subnav Section - Sticky & Dynamic */}
                 <div
                     className={`sticky top-[0px] md:top-[63px] z-40 transition-all duration-500 ease-in-out border-b ${(isScrolled && !isOverDarkSection)
-                        ? "bg-[#fdf9f1] text-black border-black/10 py-4"
-                        : "bg-black text-[#fdf9f1] pt-24 pb-6 border-transparent"
+                            ? "bg-[#fdf9f1] text-black border-black/10 py-4"
+                            : "bg-black text-[#fdf9f1] pt-24 pb-6 border-transparent"
                         }`}
                 >
                     {/* Content Container */}
@@ -59,25 +59,25 @@ const BeisCaseStudyPage = () => {
                                 <Link
                                     href="/case-studies"
                                     className={`hover:opacity-80 transition-all duration-500 ease-in-out uppercase tracking-wider ${(isScrolled && !isOverDarkSection)
-                                        ? "text-[14px] font-bold text-black"
-                                        : "text-[16px] font-extrabold text-[#fdf9f1] -mb-3 leading-none"
+                                            ? "text-[14px] font-bold text-black"
+                                            : "text-[16px] font-extrabold text-[#fdf9f1] -mb-3 leading-none"
                                         }`}
                                 >
                                     Case Study
                                 </Link>
 
                                 {/* Arrow - Visible only when scrolled */}
-                                <h5 className={`case-sduty-individual_subnav-arrow text-[18px] font-semibold transition-all duration-500 ease-in-out ${(isScrolled && !isOverDarkSection) ? "opacity-100 w-auto" : "opacity-0 w-0 overflow-hidden"}`}>
+                                <h5 className={`case-study-individual_subnav-arrow text-[18px] font-semibold transition-all duration-500 ease-in-out ${(isScrolled && !isOverDarkSection) ? "opacity-100 w-auto" : "opacity-0 w-0 overflow-hidden"}`}>
                                     →
                                 </h5>
 
                                 {/* Bottom Row */}
                                 <div className={`flex items-center gap-2 transition-transform duration-500 ease-in-out origin-left ${(isScrolled && !isOverDarkSection) ? "scale-[0.78]" : "scale-100"}`}>
                                     <span className="font-extrabold leading-none text-[36px] transition-all duration-500 ease-in-out whitespace-nowrap">
-                                       Cluck And Egg
+                                        PELVINI
                                     </span>
-                                    <span className={`px-3 py-1 bg-[#F2FC54] relative bottom-2 left-2 text-black text-xs font-bold uppercase tracking-wider  ${(isScrolled && !isOverDarkSection) ? "scale-90" : "scale-100"} transition-transform`}>
-                                        Food
+                                    <span className={`px-3 py-1 bg-[#F2FC54]  text-black text-xs font-bold uppercase tracking-wider  ${(isScrolled && !isOverDarkSection) ? "scale-90" : "scale-100"} transition-transform`}>
+                                        Wellness
                                     </span>
                                 </div>
                             </div>
@@ -90,7 +90,7 @@ const BeisCaseStudyPage = () => {
                                         Social
                                     </span>
                                     <a
-                                        href="https://www.instagram.com/beis/"
+                                        href="https://www.instagram.com/pelvini/"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className={`flex items-center ${isScrolled ? "gap-0" : "gap-2"} hover:opacity-80 transition-opacity`}
@@ -111,7 +111,7 @@ const BeisCaseStudyPage = () => {
                                             <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                                         </svg>
                                         <span className={`text-sm font-medium transition-all duration-500 ease-in-out ${(isScrolled && !isOverDarkSection) ? "w-0 overflow-hidden opacity-0" : "text-white w-auto opacity-100"}`}>
-                                           Cluck And Egg
+                                            @pelvini
                                         </span>
                                     </a>
                                 </div>
@@ -123,7 +123,7 @@ const BeisCaseStudyPage = () => {
                                         Website
                                     </span>
                                     <a
-                                        href="https://beistravel.com/"
+                                        href="https://pelvini.com/"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className={`flex items-center ${isScrolled ? "gap-0" : "gap-2"} hover:opacity-80 transition-opacity`}
@@ -144,7 +144,7 @@ const BeisCaseStudyPage = () => {
                                             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
                                         </svg>
                                         <span className={`text-sm font-medium transition-all duration-500 ease-in-out ${(isScrolled && !isOverDarkSection) ? "w-0 overflow-hidden opacity-0" : "text-white w-auto opacity-100"}`}>
-                                           Cluck And Egg
+                                            pelvini.com
                                         </span>
                                     </a>
                                 </div>
@@ -192,7 +192,7 @@ const BeisCaseStudyPage = () => {
                     <div className="max-w-7xl mx-auto px-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                             {/* Left Column: Images & 3D */}
-                            <div className="relative h-[500px] w-full flex items-center justify-center perspective-[2000px] group">
+                             <div className="relative h-[500px] w-full flex items-center justify-center perspective-[2000px] group">
                                 {/* Mobile Fallback Image - Visible on small screens */}
                                 <div className="md:hidden w-full h-full absolute inset-0 z-20">
                                     <img
@@ -317,13 +317,12 @@ const BeisCaseStudyPage = () => {
                             {/* Right Column: Content */}
                             <div className="space-y-8">
                                 <div className="space-y-4">
-<h1
-  className="text-[36px] font-bold leading-tight max-w-xl"
-  style={{ fontFamily: 'owner, sans-serif' }}
->
-  Cluck And Egg keeps customers engaged and coming back with fresh, farm-quality products
-</h1>
-
+                                    <h1
+                                        className="text-[36px] font-bold leading-tight max-w-xl"
+                                        style={{ fontFamily: 'owner, sans-serif' }}
+                                    >
+                                        PELVINI keeps customers engaged (and spending 100% more) with its mobile app
+                                    </h1>
                                 </div>
 
                                 {/* Stats Grid */}
@@ -361,7 +360,7 @@ const BeisCaseStudyPage = () => {
                                             className="text-[56px] font-bold mb-2 leading-none"
                                             style={{ fontFamily: 'owner, sans-serif', color: '#F2FC54' }}
                                         >
-                                            19%
+                                            100%
                                         </div>
                                         <p
                                             className="text-[18px] leading-snug"
@@ -385,7 +384,7 @@ const BeisCaseStudyPage = () => {
                         <iframe
                             className="w-full h-full"
                             src="https://www.youtube.com/embed/D0Bfj6QaAdU"
-                            title="Cluck And Egg Case Study Video"
+                            title="Pelvini Case Study Video"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                         ></iframe>
@@ -395,96 +394,68 @@ const BeisCaseStudyPage = () => {
                     <div className="prose prose-lg max-w-none text-gray-800">
                         <div className="mb-12">
                             <h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">About the Brand</h6>
-                           <h2 className="text-3xl font-bold mb-6">
-  Cluck And Egg is known for delivering fresh, high-quality eggs and wholesome food essentials you can trust.
-</h2>
-
-<p className="mb-6">
-  Meet <strong>Cluck And Egg</strong>, a farm-to-table brand focused on bringing fresh eggs and nutritious food products straight to your kitchen. Built on quality, transparency, and care, Cluck And Egg makes everyday meals healthier and more reliable for modern households.
-</p>
-
-<p className="mb-6">
-  Recently, we connected with the Cluck And Egg team to understand how they are using digital platforms to improve customer experience, ensure freshness at every step, and build a loyal community that values clean and responsibly sourced food.
-</p>
-
+                            <h2 className="text-3xl font-bold mb-6">PELVINI is famous for innovative pelvic health and wellness products.</h2>
+                            <p className="mb-6">
+                                Meet PELVINI, a wellness company dedicated to improving pelvic health through innovative, accessible products. Known for their science-backed approach to wellness, the brand offers solutions that empower customers to take control of their pelvic health with confidence and ease.
+                            </p>
+                            <p className="mb-6">
+                                Recently we sat down with the team at PELVINI to discuss how they're using their mobile app to improve customer engagement and build a supportive community around pelvic health.
+                            </p>
                             <blockquote className="border-l-4 border-gray-900 pl-6 italic my-8 text-xl text-gray-700 bg-gray-50 p-6 rounded-r-lg">
-                                “We don't want our consumers to ever have to choose between form and function. And ultimately, our end goal is to get our product into your hands, keep you organized, and looking good.”
+                                "We believe everyone deserves access to quality pelvic health solutions. Our goal is to provide products that are not only effective but also help build a supportive community where people feel comfortable discussing pelvic health openly."
                             </blockquote>
                         </div>
 
                         <div className="mb-12">
                             <h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">The Challenge</h6>
-                            <h2 className="text-3xl font-bold mb-6">
-  Cluck And Egg saw digital platforms as an opportunity to scale, connect, and build long-term customer trust.
-</h2>
-
-<p className="mb-6">
-  Unlike many growing food brands, Cluck And Egg didn’t turn to technology to fix a problem. There was no crisis to solve. Instead, the team recognized an <em>opportunity</em> to enhance customer experience, streamline access to fresh products, and strengthen loyalty through convenience and transparency.
-</p>
-
+                            <h2 className="text-3xl font-bold mb-6">PELVINI saw an app as an opportunity to provide ongoing support and education.</h2>
+                            <p className="mb-6">
+                                Unlike many Pelvini customers, PELVINI didn't turn to a mobile app to solve a problem. There was no challenge. Instead, the company saw an <em>opportunity</em> to provide continuous support and education to their customers.
+                            </p>
                             <blockquote className="border-l-4 border-gray-900 pl-6 italic my-8 text-xl text-gray-700 bg-gray-50 p-6 rounded-r-lg">
-                                “We want to be where the consumer is, but we also want to be where we think the consumer is going to be in the future… And so I thought of introducing a mobile application not just as another revenue channel for us, but also to introduce an additional way for us to have an experience for our consumers. A two-way conversation. It was kind of a no-brainer”
-                                <footer className="text-base font-bold text-gray-900 mt-4 not-italic">— Julie Chalker, VP of Digital & E-Commerce</footer>
+                                "Pelvic health is a journey, not a one-time purchase. We wanted to create a space where customers could continue their wellness journey with educational content, community support, and personalized guidance beyond just product purchases."
+                                <footer className="text-base font-bold text-gray-900 mt-4 not-italic">— PELVINI Team</footer>
                             </blockquote>
                             <p className="mb-6">
-                                The three goals that matter most to Julie and her team are:
+                                The three goals that matter most to the PELVINI team are:
                             </p>
                             <ol className="list-decimal pl-6 mb-6 space-y-2 font-medium">
-                                <li>Driving profitable growth</li>
-                                <li>Diversifying acquisition strategies</li>
-                                <li>Increasing customer retention</li>
+                                <li>Providing ongoing educational support</li>
+                                <li>Building a supportive community</li>
+                                <li>Increasing customer engagement and retention</li>
                             </ol>
                         </div>
 
                         <div className="mb-12">
-<h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">
-  The Solution
-</h6>
-
-<h2 className="text-3xl font-bold mb-6">
-  The Cluck And Egg app is a simple, high-impact way to build trust and repeat purchases.
-</h2>
-
-<p className="mb-6">
-  Designed as a seamless extension of Cluck And Egg’s online store, the mobile app was quick and easy to launch.
-  It fits naturally into the brand’s existing operations while giving customers a faster, more reliable way to
-  order fresh eggs and food essentials, stay informed, and feel confident about every purchase.
-</p>
-
+                            <h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">The Solution</h6>
+                            <h2 className="text-3xl font-bold mb-6">The PELVINI app creates a supportive ecosystem for pelvic health education.</h2>
+                            <p className="mb-6">
+                                Because Pelvini is designed to be an extension of a company's Shopify store, PELVINI found that its new mobile app was super low lift. That means the channel fits seamlessly into the existing operational and educational approach.
+                            </p>
                             <blockquote className="border-l-4 border-gray-900 pl-6 italic my-8 text-xl text-gray-700 bg-gray-50 p-6 rounded-r-lg">
-                                “Our consumers are highly engaged, very enthusiastic on social, and all they want is more content outside of our product, whether it's behind the scenes at our photo shoots or exclusive interviews with Shay… Being able to bring [the content] into our app has been a real benefit and a big draw.”
-                                <footer className="text-base font-bold text-gray-900 mt-4 not-italic">— Julie Chalker, VP of Digital & E-Commerce</footer>
+                                "Our customers appreciate having access to educational content, exercise routines, and community support right in their pocket. The app has become an essential tool in our mission to normalize conversations about pelvic health."
+                                <footer className="text-base font-bold text-gray-900 mt-4 not-italic">— PELVINI Team</footer>
                             </blockquote>
                         </div>
 
                         <div className="mb-12">
-                            <h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">
-  The Results
-</h6>
-
-<h2 className="text-3xl font-bold mb-6">
-  Customers may not shop daily, but the Cluck And Egg app keeps the brand top of mind when they do.
-</h2>
-
-<p className="mb-6">
-  When the Cluck And Egg team reviewed performance metrics, the difference was clear. Conversion rates and engagement
-  on the mobile app consistently outperformed the mobile website, showing that customers preferred the speed,
-  convenience, and reliability of ordering fresh products through the app.
-</p>
-
+                            <h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">The Results</h6>
+                            <h2 className="text-3xl font-bold mb-6">Pelvic health is an ongoing journey, and PELVINI's app keeps customers supported every step of the way.</h2>
+                            <p className="mb-6">
+                                When we looked at the metrics and engagement rates of the app versus the website, the mobile app numbers were consistently strong, showing that customers value the additional support and community features.
+                            </p>
                             <blockquote className="border-l-4 border-[#fdc1f7] pl-6 italic my-8 text-xl text-gray-700 bg-[#fff5fe] p-6 rounded-r-lg">
-                                “For the last couple of months, we've seen around 12% growth in terms of the revenue that's coming from those push notifications. And again, those are free, right?”
-                                <footer className="text-base font-bold text-gray-900 mt-4 not-italic">— Julie Chalker, VP of Digital & E-Commerce</footer>
+                                "We've seen engagement with educational content increase by over 40% since launching the app. Customers are spending more time learning about pelvic health and connecting with others on similar journeys."
+                                <footer className="text-base font-bold text-gray-900 mt-4 not-italic">— PELVINI Team</footer>
                             </blockquote>
                         </div>
                     </div>
 
                     {/* Bottom CTA */}
                     <div className="bg-black text-white rounded-2xl p-12 text-center mt-16">
-<h2 className="text-2xl md:text-3xl font-bold mb-8">
-  Discover how Cluck And Egg and other growing food brands are expanding their reach, building customer trust, and driving repeat purchases with RapidApps.
-</h2>
-
+                        <h2 className="text-2xl md:text-3xl font-bold mb-8">
+                            Find out how PELVINI and top brands — like Princess Polly, Aviator Nation, and Glamnetic — are breaking boundaries and sales records with RapidApps.
+                        </h2>
                         <a
                             href="https://www.tapcart.com/demo"
                             className="inline-flex items-center justify-center px-8 py-4 bg-white text-black font-bold rounded-lg hover:bg-gray-100 transition-colors gap-2"
@@ -521,7 +492,7 @@ const BeisCaseStudyPage = () => {
                             iconSrc="https://cdn.prod.website-files.com/616f0a7a027baab453433911/68ed6013e358173729b47da1_Credo%20Beauty_%20App%20Icon.png"
                             title="Credo Beauty"
                             category="Beauty & Cosmetics"
-                            description="How Credo Beauty Hit a 6-Month Revenue Goal in 2 Months with a Rapid Apps Mobile App"
+                            description="How Credo Beauty Hit a 6-Month Revenue Goal in 2 Months with a Pelvini Mobile App"
                         />
 
                         <CaseStudyCard
@@ -551,10 +522,10 @@ const BeisCaseStudyPage = () => {
                                         <path d="M2 12L12 17L22 12" />
                                     </svg>
                                 </div>
-                                <span className="text-4xl font-black tracking-tighter text-white">Cluck And Egg</span>
+                                <span className="text-4xl font-black tracking-tighter text-white">Pelvini</span>
                             </Link>
                             <div className="flex items-center gap-2 text-[#FDF9F1] hover:text-gray-300 transition-colors">
-                                <a href="mailto:help@rapidapps.co">help@cluckandegg.co</a>
+                                <a href="mailto:help@rapidapps.co">help@pelvini.co</a>
                                 <img src="https://cdn.prod.website-files.com/616f0a7a027baaf59a43390b/61cc794bf1bf3866eea6eab6_ic_open_in_new_24px%203.svg" alt="" className="w-4 h-4 opacity-70" />
                             </div>
                             <div className="pt-8">
@@ -597,7 +568,7 @@ const BeisCaseStudyPage = () => {
                             <h4 className="text-base font-extrabold uppercase tracking-wider text-white mb-6">Resources</h4>
                             <div className="flex flex-col gap-3">
                                 {[
-                                    "Help Center", "Blog", "Brand Assets", "RapidApps Academy", "Podcast Hub", "RapidApps Community"
+                                    "Help Center", "Blog", "Brand Assets", "Pelvini Academy", "Podcast Hub", "Pelvini Community"
                                 ].map((text, i) => (
                                     <div key={i} className="flex items-center gap-2 text-[14px] text-white">
                                         <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" className="flex-shrink-0 text-white"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" /></svg>
@@ -625,7 +596,7 @@ const BeisCaseStudyPage = () => {
                     {/* Bottom Bar */}
                     <div className="pt-12 border-t border-gray-800 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-16">
                         <div className="flex flex-col md:flex-row gap-8 text-sm text-white">
-                            <span>© Copyright 2024 cluckandegg Inc.</span>
+                            <span>© Copyright 2024 Pelvini Inc.</span>
                             <div className="flex gap-6">
                                 <Link href="#" className="text-white hover:text-gray-300 transition-colors">Terms of Use</Link>
                                 <Link href="#" className="text-white hover:text-gray-300 transition-colors">Privacy Policy</Link>
@@ -650,7 +621,6 @@ const BeisCaseStudyPage = () => {
         </div>
     );
 };
-
 
 interface CaseStudyCardProps {
     href: string;
@@ -707,4 +677,4 @@ const CaseStudyCard = ({ href, bgColor, imageSrc, iconSrc, title, category, desc
     );
 };
 
-export default BeisCaseStudyPage;
+export default PelviniCaseStudyPage;
