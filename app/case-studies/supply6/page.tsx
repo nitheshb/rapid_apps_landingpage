@@ -7,7 +7,7 @@ import Script from "next/script";
 
 import { motion, useScroll, useTransform } from "framer-motion";
 
-const BeisCaseStudyPage = () => {
+const Supply6CaseStudyPage = () => {
     const [hoveredItem, setHoveredItem] = React.useState<string | null>(null);
     const [isScrolled, setIsScrolled] = React.useState(false);
 
@@ -74,10 +74,10 @@ const BeisCaseStudyPage = () => {
                                 {/* Bottom Row */}
                                 <div className={`flex items-center gap-2 transition-transform duration-500 ease-in-out origin-left ${(isScrolled && !isOverDarkSection) ? "scale-[0.78]" : "scale-100"}`}>
                                     <span className="font-extrabold leading-none text-[36px] transition-all duration-500 ease-in-out whitespace-nowrap">
-                                        Cluck And Egg
+                                        Supply6
                                     </span>
                                     <span className={`px-3 py-1 bg-[#F2FC54] text-black text-xs font-bold uppercase tracking-wider  ${(isScrolled && !isOverDarkSection) ? "scale-90" : "scale-100"} transition-transform`}>
-                                        Food
+                                        health
                                     </span>
                                 </div>
                             </div>
@@ -90,7 +90,7 @@ const BeisCaseStudyPage = () => {
                                         Social
                                     </span>
                                     <a
-                                        href="https://www.instagram.com/beis/"
+                                        href="https://www.instagram.com/supply6/"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className={`flex items-center ${isScrolled ? "gap-0" : "gap-2"} hover:opacity-80 transition-opacity`}
@@ -111,7 +111,7 @@ const BeisCaseStudyPage = () => {
                                             <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                                         </svg>
                                         <span className={`text-sm font-medium transition-all duration-500 ease-in-out ${(isScrolled && !isOverDarkSection) ? "w-0 overflow-hidden opacity-0" : "text-white w-auto opacity-100"}`}>
-                                            @CluckAndEgg
+                                            @Supply6
                                         </span>
                                     </a>
                                 </div>
@@ -123,7 +123,7 @@ const BeisCaseStudyPage = () => {
                                         Website
                                     </span>
                                     <a
-                                        href="https://beistravel.com/"
+                                        href="https://supplysix.com/#main"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className={`flex items-center ${isScrolled ? "gap-0" : "gap-2"} hover:opacity-80 transition-opacity`}
@@ -144,7 +144,7 @@ const BeisCaseStudyPage = () => {
                                             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
                                         </svg>
                                         <span className={`text-sm font-medium transition-all duration-500 ease-in-out ${(isScrolled && !isOverDarkSection) ? "w-0 overflow-hidden opacity-0" : "text-white w-auto opacity-100"}`}>
-                                            beistravel.com
+                                            supply6.com
                                         </span>
                                     </a>
                                 </div>
@@ -317,13 +317,12 @@ const BeisCaseStudyPage = () => {
                             {/* Right Column: Content */}
                             <div className="space-y-8">
                                 <div className="space-y-4">
-                                  <h1
-  className="text-[36px] font-bold leading-tight max-w-xl"
-  style={{ fontFamily: 'owner, sans-serif' }}
->
-  Cluck And Egg keeps customers coming back with fresh, farm-to-home products
-</h1>
-
+                                    <h1
+                                        className="text-[36px] font-bold leading-tight max-w-xl"
+                                        style={{ fontFamily: 'owner, sans-serif' }}
+                                    >
+                                        Supply6 keeps customers engaged (and spending 19% more) with its mobile app
+                                    </h1>
                                 </div>
 
                                 {/* Stats Grid */}
@@ -353,7 +352,7 @@ const BeisCaseStudyPage = () => {
                                             className="text-[18px] leading-snug"
                                             style={{ fontFamily: 'ownerstext, sans-serif', color: '#FDF9F1' }}
                                         >
-                                            of total US revenue comes from app
+                                            of total revenue comes from app
                                         </p>
                                     </div>
                                     <div>
@@ -394,92 +393,57 @@ const BeisCaseStudyPage = () => {
                     {/* Article Content */}
                     <div className="prose prose-lg max-w-none text-gray-800">
                         <div className="mb-12">
-  <h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">
-    About the Brand
-  </h6>
+                            <h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">About the Brand</h6>
+                            <h2 className="text-3xl font-bold mb-6">Supply6 is a science-driven nutrition and wellness brand focused on helping people fill everyday nutrient gaps in a simple, convenient way.</h2>
+                            <p className="mb-6">
+                                Meet Supply6, a direct-to-consumer health brand that’s gaining attention across social feeds and wellness communities. Founded with the mission to make balanced nutrition effortless, Supply6 creates thoughtfully formulated supplements and nutrition products that support daily health — from foundational micronutrients to hydration and energy solutions.
+                            </p>
+                            <p className="mb-6">
+                                With a growing community of health-minded customers, celebrity partnerships, and availability on major marketplaces, Supply6 is positioning itself as a modern nutrition choice for people looking to simplify wellness while staying energized on the go.
+                            </p>
+                            <blockquote className="border-l-4 border-gray-900 pl-6 italic my-8 text-xl text-gray-700 bg-gray-50 p-6 rounded-r-lg">
+                                “We don't want our consumers to ever have to choose between form and function. And ultimately, our end goal is to get our product into your hands, keep you organized, and looking good.”
+                            </blockquote>
+                        </div>
 
-  <h2 className="text-3xl font-bold mb-6">
-    Cluck And Egg is known for delivering fresh, farm-quality eggs and poultry you can trust.
-  </h2>
-
-  <p className="mb-6">
-    Meet Cluck And Egg, a farm-to-home food brand focused on providing fresh eggs and
-    responsibly sourced poultry straight from local farms to customers’ doorsteps.
-    Built on transparency and quality, Cluck And Egg makes everyday essentials healthier
-    and more reliable for families.
-  </p>
-
-  <p className="mb-6">
-    We recently spoke with the Cluck And Egg operations and digital team to understand how
-    the brand is using its mobile app to simplify ordering, improve customer retention,
-    and build long-term trust with its community.
-  </p>
-
-  <blockquote className="border-l-4 border-gray-900 pl-6 italic my-8 text-xl text-gray-700 bg-gray-50 p-6 rounded-r-lg">
-    “Our goal is simple — deliver fresh, ethically sourced eggs and poultry while making
-    healthy food accessible and convenient for every household.”
-  </blockquote>
-</div>
-
-
-                       <div className="mb-12">
-  <h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">
-    The Challenge
-  </h6>
-
-  <h2 className="text-3xl font-bold mb-6">
-    Cluck And Egg saw its app as a way to scale operations and build lasting customer trust.
-  </h2>
-
-  <p className="mb-6">
-    Unlike many food delivery brands, Cluck And Egg didn’t build a mobile app to fix a
-    broken process. Instead, the team saw an <em>opportunity</em> to connect directly
-    with customers, simplify repeat orders, and guarantee freshness from farm to home.
-  </p>
-
-  <blockquote className="border-l-4 border-gray-900 pl-6 italic my-8 text-xl text-gray-700 bg-gray-50 p-6 rounded-r-lg">
-    “We wanted to meet customers where they are — on their phones — while also building
-    a more transparent, reliable food supply experience. The app isn’t just a sales
-    channel; it’s a two-way relationship that helps us deliver better quality and
-    consistency every time.”
-    <footer className="text-base font-bold text-gray-900 mt-4 not-italic">
-      — Operations & Digital Team, Cluck And Egg
-    </footer>
-  </blockquote>
-
-  <p className="mb-6">
-    The three goals that matter most to the Cluck And Egg team are:
-  </p>
-
-  <ol className="list-decimal pl-6 mb-6 space-y-2 font-medium">
-    <li>Scaling fresh food delivery profitably</li>
-    <li>Expanding customer acquisition channels</li>
-    <li>Increasing repeat purchases and retention</li>
-  </ol>
-</div>
-
+                        <div className="mb-12">
+                            <h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">The Challenge</h6>
+                            <h2 className="text-3xl font-bold mb-6">Supply6 saw a mobile app as a powerful opportunity to deepen customer engagement, scale its nutrition ecosystem, and build long-term loyalty.</h2>
+                            <p className="mb-6">
+                                By investing in a mobile app early, Supply6 aimed to simplify reorders, deliver personalized recommendations, and stay top-of-mind as a trusted partner in everyday wellness — not just a supplement brand.
+                            </p>
+                            <blockquote className="border-l-4 border-gray-900 pl-6 italic my-8 text-xl text-gray-700 bg-gray-50 p-6 rounded-r-lg">
+                                “We want to be where the consumer is, but we also want to be where we think the consumer is going to be in the future… And so I thought of introducing a mobile application not just as another revenue channel for us, but also to introduce an additional way for us to have an experience for our consumers. A two-way conversation. It was kind of a no-brainer”
+                            </blockquote>
+                            <p className="mb-6">
+                                The three goals that matter for our team are:
+                            </p>
+                            <ol className="list-decimal pl-6 mb-6 space-y-2 font-medium">
+                                <li>Driving profitable growth</li>
+                                <li>Diversifying acquisition strategies</li>
+                                <li>Increasing customer retention</li>
+                            </ol>
+                        </div>
 
                         <div className="mb-12">
                             <h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">The Solution</h6>
-                            <h2 className="text-3xl font-bold mb-6">The BÉIS app is a low-lift lever that builds a loyal community with exclusivity.</h2>
+                            <h2 className="text-3xl font-bold mb-6">The Supply6 app became a low-effort, high-impact channel for building loyalty and strengthening its wellness community through personalized experiences and exclusivity.</h2>
                             <p className="mb-6">
-                                Because RapidApps is designed to be an extension of a company’s Shopify store, BÉIS found that its new mobile app was super low lift. That means, according to Julie, that the channel fits seamlessly into the existing operational and marketing approach.
+                                Because RapidApps is designed to work as a natural extension of a brand’s Shopify store, Supply6 was able to launch its mobile app with minimal operational overhead. The app integrated seamlessly with existing systems, allowing the team to manage products, orders, and promotions without changing their day-to-day workflows.
                             </p>
                             <blockquote className="border-l-4 border-gray-900 pl-6 italic my-8 text-xl text-gray-700 bg-gray-50 p-6 rounded-r-lg">
                                 “Our consumers are highly engaged, very enthusiastic on social, and all they want is more content outside of our product, whether it's behind the scenes at our photo shoots or exclusive interviews with Shay… Being able to bring [the content] into our app has been a real benefit and a big draw.”
-                                <footer className="text-base font-bold text-gray-900 mt-4 not-italic">— Julie Chalker, VP of Digital & E-Commerce</footer>
                             </blockquote>
                         </div>
 
                         <div className="mb-12">
                             <h6 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">The Results</h6>
-                            <h2 className="text-3xl font-bold mb-6">Nobody buys a suitcase every month, but BÉIS’s app keeps customers close until they’re ready.</h2>
+                            <h2 className="text-3xl font-bold mb-6">Nutrition is a daily habit — and the Supply6 app keeps customers engaged well beyond a single purchase.</h2>
                             <p className="mb-6">
-                                When we talked to Julie, she was quick to mention that when she looked at the metrics and conversion rates of the app versus the website, the mobile app numbers were really, really strong.
+                                When reviewing performance metrics, the Supply6 team quickly saw a clear difference between mobile app and website behavior. App users showed stronger engagement, higher repeat purchase rates, and more consistent interactions compared to web-only shoppers.
                             </p>
                             <blockquote className="border-l-4 border-[#fdc1f7] pl-6 italic my-8 text-xl text-gray-700 bg-[#fff5fe] p-6 rounded-r-lg">
                                 “For the last couple of months, we've seen around 12% growth in terms of the revenue that's coming from those push notifications. And again, those are free, right?”
-                                <footer className="text-base font-bold text-gray-900 mt-4 not-italic">— Julie Chalker, VP of Digital & E-Commerce</footer>
                             </blockquote>
                         </div>
                     </div>
@@ -487,7 +451,7 @@ const BeisCaseStudyPage = () => {
                     {/* Bottom CTA */}
                     <div className="bg-black text-white rounded-2xl p-12 text-center mt-16">
                         <h2 className="text-2xl md:text-3xl font-bold mb-8">
-                            Find out how BÉIS and top brands — like Princess Polly, Aviator Nation, and Glamnetic — are breaking boundaries and sales records with RapidApps.
+                            Find out how Supply6 and other fast-growing DTC brands are building stronger customer relationships, boosting retention, and driving repeat revenue with RapidApps.
                         </h2>
                         <a
                             href="https://www.tapcart.com/demo"
@@ -511,7 +475,7 @@ const BeisCaseStudyPage = () => {
                         <CaseStudyCard
                             href="/case-studies/midnight-hour"
                             bgColor="#464c6a"
-                            imageSrc="https://cdn.prod.website-files.com/616f0a7a027baab453433911/6915f9e54ca0ae04d3589070_MidnightHour_Thumbnail%20Phone%20Mock%20Up.png"
+                            imageSrc="/women2.jpeg"
                             iconSrc="https://cdn.prod.website-files.com/616f0a7a027baab453433911/6915f9ebecbbbfa16fdd80fe_MidnightHour_AppIcon.png"
                             title="Midnight Hour"
                             category="Fashion & Apparel"
@@ -521,11 +485,11 @@ const BeisCaseStudyPage = () => {
                         <CaseStudyCard
                             href="/case-studies/credo-beauty"
                             bgColor="#033f55"
-                            imageSrc="https://cdn.prod.website-files.com/616f0a7a027baab453433911/68ed6005bce26440606b6441_Credo%20Beauty_Thumbnail%20Phone%20Mock%20Up.png"
+                            imageSrc="/cluck_egg.jpg"
                             iconSrc="https://cdn.prod.website-files.com/616f0a7a027baab453433911/68ed6013e358173729b47da1_Credo%20Beauty_%20App%20Icon.png"
-                            title="Credo Beauty"
-                            category="Beauty & Cosmetics"
-                            description="How Credo Beauty Hit a 6-Month Revenue Goal in 2 Months with a Rapid Apps Mobile App"
+                            title="Cluck and Egg"
+                            category="Food "
+                            description="How Cluck & Egg Hit a 6-Month Revenue Goal in Just 2 Months with a Rapid Apps Mobile App"
                         />
 
                         <CaseStudyCard
@@ -540,7 +504,6 @@ const BeisCaseStudyPage = () => {
                     </div>
                 </div>
             </div>
-
             {/* Footer */}
             <footer className="bg-black text-white pt-24 pb-12 border-t border-gray-800">
                 <div className="max-w-7xl mx-auto px-4">
@@ -711,4 +674,4 @@ const CaseStudyCard = ({ href, bgColor, imageSrc, iconSrc, title, category, desc
     );
 };
 
-export default BeisCaseStudyPage;
+export default Supply6CaseStudyPage;

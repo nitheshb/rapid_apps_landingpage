@@ -4,9 +4,10 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import ResourcesMenu from "./ResourcesMenu";
+import PartnersMenu from "./PartnersMenu";
 
 const navigationData = [
-  { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
   { label: "Contact", href: "#contacts" },
 ];
@@ -16,6 +17,7 @@ const RapidAppsHeader = () => {
   const [scrolled, setScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [showAllCaseStudies, setShowAllCaseStudies] = useState(false);
+  const [mobileSectionExpanded, setMobileSectionExpanded] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -155,8 +157,8 @@ const RapidAppsHeader = () => {
         
         .new-ws-navbar-layout {
           display: grid;
-          grid-template-columns: 74% 28%;
-          gap: 0;
+          grid-template-columns: 3fr 1fr;
+          gap: 24px;
         }
         
         .ws-nav-left {
@@ -233,29 +235,54 @@ const RapidAppsHeader = () => {
         .dropdown-enter {
           animation: slideDown 0.3s ease forwards;
         }
+
+        /* Hover Underline Effect */
+        .nav-underline-text {
+          position: relative;
+          display: inline-block;
+        }
+        
+        .nav-underline-text::after {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 4px;
+          top: 100%;
+          margin-top: 4px;
+          left: 50%;
+          right: 50%;
+          transform: translateX(-50%);
+          background-color: rgb(63, 30, 251);
+          transition: width 0.3s ease;
+        }
+        
+        .nav-underline-trigger:hover .nav-underline-text::after,
+        .nav-underline-text:hover::after {
+          width: 110%;
+        }
       `}</style>
 
       <header
         role="navigation"
-        className={`new-nav-menu w-nav-menu sticky top-0 z-50 transition-all duration-300 relative ${scrolled ? "bg-white/95 backdrop-blur-md border-b border-gray-200" : "bg-white border-b border-gray-200"
+        className={`new-nav-menu w-nav-menu sticky top-0 z-50 transition-all duration-300 relative ${scrolled ? "bg-black/95 backdrop-blur-md border-b border-gray-800" : "bg-black border-b border-gray-800"
           }`}
       >
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between py-4">
             {/* Logo */}
             <div className="flex items-center">
-              <Link href="/" className="text-2xl font-bold text-gray-900 hover:text-black owners-text">
+              <Link href="/" className="text-2xl font-bold text-white hover:text-gray-300 owners-text">
                 RapidApps
               </Link>
             </div>
 
             {/* Desktop Navigation */}
-            <nav ref={dropdownRef} className="hidden md:flex items-center space-x-16">
-              {/* Why Tapcart Dropdown */}
+            <nav ref={dropdownRef} className="hidden md:flex items-center space-x-28">
+              {/* Why Rapid Apps Dropdown */}
               <div className="dropdown-item w-dropdown static" style={{ maxWidth: "1280px" }}>
                 <button
                   onClick={() => handleDropdownClick("why-tapcart")}
-                  className="new-ws-navbar-link w-dropdown-toggle flex items-center border-0 bg-transparent cursor-pointer owners-text"
+                  className="new-ws-navbar-link w-dropdown-toggle flex items-center border-0 bg-transparent cursor-pointer owners-text nav-underline-trigger"
                   id="w-dropdown-toggle-0"
                   aria-controls="w-dropdown-list-0"
                   aria-haspopup="menu"
@@ -264,10 +291,10 @@ const RapidAppsHeader = () => {
                   tabIndex={0}
                   style={{ borderColor: "rgba(0, 0, 0, 0)" }}
                 >
-                  <div className="ws-navbar-text text-gray-700 font-medium hover:text-gray-900">Why RapidApps</div>
+                  <div className="ws-navbar-text text-white font-medium hover:text-gray-300 nav-underline-text">Why RapidApps</div>
                   <div className="ws-navbar-icon w-embed ml-2">
                     <svg width="12" height="11" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1 6C1 6 6.08629 7.2 7 12C7.91371 7.2 13 6 13 6" stroke="#1B191B" strokeWidth="2"></path>
+                      <path d="M1 6C1 6 6.08629 7.2 7 12C7.91371 7.2 13 6 13 6" stroke="white" strokeWidth="2"></path>
                     </svg>
                   </div>
                 </button>
@@ -285,7 +312,7 @@ const RapidAppsHeader = () => {
                       aria-labelledby="w-dropdown-toggle-0"
                       style={{
                         width: "100vw",
-                        height: showAllCaseStudies ? "500px" : "350px",
+                        height: "auto",
                         borderTop: "none",
                         borderTopLeftRadius: "0",
                         borderTopRightRadius: "0",
@@ -320,10 +347,10 @@ const RapidAppsHeader = () => {
                                   >
                                     <div className="case-study-item">
                                       <div className="nav_caase-study-thumbnail">
-                                        <img src="https://cdn.prod.website-files.com/616f0a7a027baaf59a43390b/65049ac866fad7588452d9ab_Group%205711.png" loading="lazy" alt="" className="nav_caase-study-thumbnail" />
+                                        <img src="https://ik.imagekit.io/4sjmoqtje/tr:w-180,c-at_max/cdn/shop/files/kalki-logo.svg?v=1737539097" loading="lazy" alt="" className="nav_caase-study-thumbnail" style={{ objectFit: "contain", padding: "12px" }} />
                                       </div>
                                       <div>
-                                        <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16 mb-2">Fashions</h6>
+                                        <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16 mb-2"> Kalki Fashions</h6>
                                         <p className="nav-dropdown_sub-text">
                                           Kalki Fashions app sees 67% higher conversion rate
                                         </p>
@@ -365,9 +392,9 @@ const RapidAppsHeader = () => {
                                         <img src="/Food1.jpg" loading="lazy" alt="Cluck & Egg" className="nav_caase-study-thumbnail" />
                                       </div>
                                       <div>
-                                        <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16 mb-2">BÉIS 3</h6>
+                                        <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16 mb-2">Cluck & Egg</h6>
                                         <p className="nav-dropdown_sub-text">
-                                          BÉIS app sees 67% higher conversion rate
+                                          Cluck & Egg app sees 67% higher conversion rate
                                         </p>
                                       </div>
                                     </div>
@@ -399,19 +426,19 @@ const RapidAppsHeader = () => {
 
                                     <div className="ws-navbar-menu-item-wrapper mobile-margin-0">
                                       <Link
-                                        href="/case-studies/beis-5"
+                                        href="/case-studies/supply6"
                                         className="nav_text-wrap nav_link w-inline-block"
                                         onClick={() => setOpenDropdown(null)}
                                         tabIndex={0}
                                       >
                                         <div className="case-study-item">
                                           <div className="nav_caase-study-thumbnail">
-                                            <img src="https://cdn.prod.website-files.com/616f0a7a027baaf59a43390b/65049ac866fad7588452d9ab_Group%205711.png" loading="lazy" alt="" className="nav_caase-study-thumbnail" />
+                                            <img src="https://supplysix.com/cdn/shop/files/Supply_6_logo_6_2_280x.png?v=1717677528" loading="lazy" alt="" className="nav_caase-study-thumbnail" style={{ objectFit: "contain", padding: "12px" }} />
                                           </div>
                                           <div>
-                                            <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16 mb-2">BÉIS 5</h6>
+                                            <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16 mb-2">Supply6</h6>
                                             <p className="nav-dropdown_sub-text">
-                                              BÉIS app sees 67% higher conversion rate
+                                              Supply6 app sees 67% higher conversion rate
                                             </p>
                                           </div>
                                         </div>
@@ -518,209 +545,12 @@ const RapidAppsHeader = () => {
                 </AnimatePresence>
               </div>
 
-              {/* Platform Dropdown */}
-              <div className="dropdown-item w-dropdown static" style={{ maxWidth: "1280px" }}>
-                <button
-                  onClick={() => handleDropdownClick("platform")}
-                  className="new-ws-navbar-link w-dropdown-toggle flex items-center border-0 bg-transparent cursor-pointer owners-text"
-                  id="w-dropdown-toggle-1"
-                  aria-controls="w-dropdown-list-1"
-                  aria-haspopup="menu"
-                  aria-expanded={openDropdown === "platform"}
-                  role="button"
-                  tabIndex={0}
-                  style={{ borderColor: "rgba(0, 0, 0, 0)" }}
-                >
-                  <div className="ws-navbar-text text-gray-700 font-medium hover:text-gray-900">Platform</div>
-                  <div className="ws-navbar-icon w-embed ml-2">
-                    <svg width="12" height="11" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1 6C1 6 6.08629 7.2 7 12C7.91371 7.2 13 6 13 6" stroke="#1B191B" strokeWidth="2"></path>
-                    </svg>
-                  </div>
-                </button>
 
-                {/* Platform Dropdown Menu */}
-                <AnimatePresence>
-                  {openDropdown === "platform" && (
-                    <motion.nav
-                      initial={{ opacity: 0, y: -20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
-                      transition={{ duration: 0.3, ease: "easeOut" }}
-                      className="new-ws-dropdown-list w-dropdown-list absolute top-full left-0 bg-white shadow-xl z-50 overflow-hidden"
-                      id="w-dropdown-list-1"
-                      aria-labelledby="w-dropdown-toggle-1"
-                      style={{
-                        width: "100vw",
-                        height: "337px",
-                        borderTop: "none",
-                        borderTopLeftRadius: "0",
-                        borderTopRightRadius: "0",
-                      }}
-                    >
-                      <div className="ws-dropdown-menu-section new" style={{ height: "100%" }}>
-                        <div className="ws-dropdown-content-container w-container" style={{ height: "100%" }}>
-                          <div className="w-layout-grid new-ws-navbar-layout" style={{ height: "100%" }}>
-                            {/* Left Column - Features */}
-                            <div className="ws-nav-left" style={{ height: "100%" }}>
-                              <div id="w-node-f0bbfd8f-a4d8-906b-eecb-e7f7b1b719ae-11f6dcc5" className="ws-navbar-menu-item-wrapper feature mb-8">
-                                <Link
-                                  href="/features"
-                                  className="ws-navbar-menu-item-link w-inline-block"
-                                  onClick={() => setOpenDropdown(null)}
-                                  tabIndex={0}
-                                >
-                                  <div className="heading-xxsmall is-nav-menu-category">Features</div>
-                                  <div className="nav-dropdown_subhead-text">
-                                    From push notifications to proprietary analytics, see all that RapidApps has to offer
-                                  </div>
-                                </Link>
-                              </div>
-
-                              <div id="w-node-f0bbfd8f-a4d8-906b-eecb-e7f7b1b719c4-11f6dcc5" className="ws-navbar-menu-multi-item-wrap">
-                                {/* Tapcart AI */}
-                                <Link
-                                  href="/product/tapcart-ai"
-                                  className="nav_text-wrap nav_link features w-inline-block mb-4"
-                                  onClick={() => setOpenDropdown(null)}
-                                  tabIndex={0}
-                                >
-                                  <div className="nav_button-text-wrap flex items-center gap-2 mb-1">
-                                    <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16 ai-gradient">RapidApps AI</h6>
-                                    <div className="text-style_menu-item_badge ai">New</div>
-                                  </div>
-                                  <p className="nav-dropdown_sub-text">
-                                    Keep your app fresh, personalized, and high-converting with AI
-                                  </p>
-                                </Link>
-
-                                {/* App Studio */}
-                                <Link
-                                  href="/product/app-studio"
-                                  className="nav_text-wrap nav_link features w-inline-block mb-4"
-                                  onClick={() => setOpenDropdown(null)}
-                                  tabIndex={0}
-                                >
-                                  <div className="nav_button-text-wrap mb-1">
-                                    <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16">App Studio</h6>
-                                  </div>
-                                  <p className="nav-dropdown_sub-text">
-                                    Our drag-and-drop editor lets you create and manage a mobile app for your Shopify store
-                                  </p>
-                                </Link>
-
-                                {/* Push Notifications */}
-                                <Link
-                                  href="/product/push-notifications"
-                                  className="nav_text-wrap nav_link features w-inline-block"
-                                  onClick={() => setOpenDropdown(null)}
-                                  tabIndex={0}
-                                >
-                                  <div className="nav_button-text-wrap mb-1">
-                                    <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16">Push Notifications</h6>
-                                  </div>
-                                  <p className="nav-dropdown_sub-text">
-                                    Send unlimited push notifications to engage loyal customers and drive revenue
-                                  </p>
-                                </Link>
-                              </div>
-
-                              <Link
-                                id="w-node-f0bbfd8f-a4d8-906b-eecb-e7f7b1b719d7-11f6dcc5"
-                                href="/features"
-                                className="nav_text-wrap new-nav-learn-more w-inline-block mt-6"
-                                onClick={() => setOpenDropdown(null)}
-                                tabIndex={0}
-                              >
-                                <div className="nav_button-text-wrap">
-                                  <div className="nav-dropdown_read-more_link-wrapper">
-                                    <div className="nav-dropdown_read-more-text">See all features</div>
-                                    <svg className="nav-dropdown_read-more-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                      <path d="M1 6H11M11 6L6 1M11 6L6 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
-                                  </div>
-                                </div>
-                              </Link>
-                            </div>
-
-                            {/* Right Column - Integrations */}
-                            <div id="w-node-f0bbfd8f-a4d8-906b-eecb-e7f7b1b719ed-11f6dcc5" className="ws-nav-right with-link-at-bottom" style={{ height: "100%" }}>
-                              <Link
-                                href="/integrations"
-                                className="mobile-margin-bottom-12 w-inline-block mb-8"
-                                onClick={() => setOpenDropdown(null)}
-                                tabIndex={0}
-                              >
-                                <div className="heading-xxsmall is-nav-menu-category">Integrations</div>
-                                <div className="nav-dropdown_subhead-text">
-                                  Fuse your favorite Shopify apps and automations without retooling
-                                </div>
-                              </Link>
-
-                              <div className="space-y-2 mb-6">
-                                <Link
-                                  href="https://www.tapcart.com/integrations/klaviyo"
-                                  className="nav_text-wrap nav_link w-inline-block"
-                                  onClick={() => setOpenDropdown(null)}
-                                  tabIndex={0}
-                                >
-                                  <div className="nav_button-text-wrap">
-                                    <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16">Klaviyo</h6>
-                                  </div>
-                                </Link>
-
-                                <Link
-                                  href="https://www.tapcart.com/integrations/recharge-payments"
-                                  className="nav_text-wrap nav_link w-inline-block"
-                                  onClick={() => setOpenDropdown(null)}
-                                  tabIndex={0}
-                                >
-                                  <div className="nav_button-text-wrap">
-                                    <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16">Recharge</h6>
-                                  </div>
-                                </Link>
-
-                                <Link
-                                  href="https://www.tapcart.com/integrations/global-e"
-                                  className="nav_text-wrap nav_link w-inline-block"
-                                  onClick={() => setOpenDropdown(null)}
-                                  tabIndex={0}
-                                >
-                                  <div className="nav_button-text-wrap flex items-center gap-2">
-                                    <h6 className="heading-11 heading-12 heading-13 heading-14 heading-15 heading-16">Global-e</h6>
-                                    <div className="text-style_menu-item_badge">New</div>
-                                  </div>
-                                </Link>
-                              </div>
-
-                              <Link
-                                href="/integrations"
-                                className="nav_text-wrap new-nav-learn-more w-inline-block"
-                                onClick={() => setOpenDropdown(null)}
-                                tabIndex={0}
-                              >
-                                <div className="nav_button-text-wrap">
-                                  <div className="nav-dropdown_read-more_link-wrapper">
-                                    <div className="nav-dropdown_read-more-text">See all integrations</div>
-                                    <svg className="nav-dropdown_read-more-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                      <path d="M1 6H11M11 6L6 1M11 6L6 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
-                                  </div>
-                                </div>
-                              </Link>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </motion.nav>
-                  )}
-                </AnimatePresence>
-              </div>
 
               {/* Pricing Simple Link */}
               <Link
                 href="/pricing-new"
-                className="new-ws-navbar-link link-only w-nav-link text-gray-700 font-medium hover:text-gray-900 owners-text"
+                className="new-ws-navbar-link link-only w-nav-link text-white font-medium hover:text-gray-300 owners-text nav-underline-text"
                 style={{ maxWidth: "1280px" }}
                 onClick={() => setOpenDropdown(null)}
               >
@@ -728,10 +558,10 @@ const RapidAppsHeader = () => {
               </Link>
 
               {/* Resources Dropdown */}
-              <div className="dropdown-item w-dropdown relative" style={{ maxWidth: "1280px" }}>
+              <div className="dropdown-item w-dropdown static" style={{ maxWidth: "1280px" }}>
                 <button
                   onClick={() => handleDropdownClick("resources")}
-                  className="new-ws-navbar-link w-dropdown-toggle flex items-center border-0 bg-transparent cursor-pointer owners-text"
+                  className="new-ws-navbar-link w-dropdown-toggle flex items-center border-0 bg-transparent cursor-pointer owners-text nav-underline-trigger"
                   id="w-dropdown-toggle-2"
                   aria-controls="w-dropdown-list-2"
                   aria-haspopup="menu"
@@ -740,20 +570,43 @@ const RapidAppsHeader = () => {
                   tabIndex={0}
                   style={{ borderColor: "rgba(0, 0, 0, 0)" }}
                 >
-                  <div className="ws-navbar-text text-gray-700 font-medium hover:text-gray-900">Resources</div>
+                  <div className="ws-navbar-text text-white font-medium hover:text-gray-300 nav-underline-text">Resources</div>
                   <div className="ws-navbar-icon w-embed ml-2">
                     <svg width="12" height="11" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1 6C1 6 6.08629 7.2 7 12C7.91371 7.2 13 6 13 6" stroke="#1B191B" strokeWidth="2"></path>
+                      <path d="M1 6C1 6 6.08629 7.2 7 12C7.91371 7.2 13 6 13 6" stroke="white" strokeWidth="2"></path>
                     </svg>
                   </div>
                 </button>
+
+                <AnimatePresence>
+                  {openDropdown === "resources" && (
+                    <motion.nav
+                      initial={{ opacity: 0, y: -20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
+                      className="new-ws-dropdown-list w-dropdown-list absolute top-full left-0 bg-white shadow-xl z-50 overflow-hidden"
+                      id="w-dropdown-list-2"
+                      aria-labelledby="w-dropdown-toggle-2"
+                      style={{
+                        width: "100vw",
+                        height: "auto",
+                        borderTop: "none",
+                        borderTopLeftRadius: "0",
+                        borderTopRightRadius: "0",
+                      }}
+                    >
+                      <ResourcesMenu setOpenDropdown={setOpenDropdown} />
+                    </motion.nav>
+                  )}
+                </AnimatePresence>
               </div>
 
               {/* Partners Dropdown */}
-              <div className="dropdown-item w-dropdown relative" style={{ maxWidth: "1280px" }}>
+              <div className="dropdown-item w-dropdown static" style={{ maxWidth: "1280px" }}>
                 <button
                   onClick={() => handleDropdownClick("partners")}
-                  className="new-ws-navbar-link w-dropdown-toggle flex items-center border-0 bg-transparent cursor-pointer owners-text"
+                  className="new-ws-navbar-link w-dropdown-toggle flex items-center border-0 bg-transparent cursor-pointer owners-text nav-underline-trigger"
                   id="w-dropdown-toggle-3"
                   aria-controls="w-dropdown-list-3"
                   aria-haspopup="menu"
@@ -762,22 +615,47 @@ const RapidAppsHeader = () => {
                   tabIndex={0}
                   style={{ borderColor: "rgba(0, 0, 0, 0)" }}
                 >
-                  <div className="ws-navbar-text text-gray-700 font-medium hover:text-gray-900">Partners</div>
+                  <div className="ws-navbar-text text-white font-medium hover:text-gray-300 nav-underline-text">Partners</div>
                   <div className="ws-navbar-icon w-embed ml-2">
                     <svg width="12" height="11" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1 6C1 6 6.08629 7.2 7 12C7.91371 7.2 13 6 13 6" stroke="#1B191B" strokeWidth="2"></path>
+                      <path d="M1 6C1 6 6.08629 7.2 7 12C7.91371 7.2 13 6 13 6" stroke="white" strokeWidth="2"></path>
                     </svg>
                   </div>
                 </button>
+
+                <AnimatePresence>
+                  {openDropdown === "partners" && (
+                    <motion.nav
+                      initial={{ opacity: 0, y: -20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
+                      className="new-ws-dropdown-list w-dropdown-list absolute top-full left-0 bg-white shadow-xl z-50 overflow-hidden"
+                      id="w-dropdown-list-3"
+                      aria-labelledby="w-dropdown-toggle-3"
+                      style={{
+                        width: "100vw",
+                        height: "auto",
+                        borderTop: "none",
+                        borderTopLeftRadius: "0",
+                        borderTopRightRadius: "0",
+                      }}
+                    >
+                      <PartnersMenu setOpenDropdown={setOpenDropdown} />
+                    </motion.nav>
+                  )}
+                </AnimatePresence>
               </div>
 
+
+
               {/* Original navigation items */}
-              <div className="flex items-center space-x-8">
+              <div className="flex items-center space-x-24">
                 {navigationData.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="text-gray-700 font-medium hover:text-gray-900 owners-text"
+                    className="text-white font-medium hover:text-gray-300 owners-text nav-underline-text"
                     onClick={() => setOpenDropdown(null)}
                   >
                     {item.label}
@@ -788,11 +666,11 @@ const RapidAppsHeader = () => {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+              className="md:hidden p-2 hover:bg-gray-800 rounded-lg transition-colors"
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Open Mobile Menu"
             >
-              <Menu size={28} />
+              <Menu size={28} className="text-white" />
             </button>
           </div>
         </div >
@@ -830,22 +708,88 @@ const RapidAppsHeader = () => {
                   <nav className="flex flex-col px-6 py-4 space-y-0 owners-text">
                     {/* Mobile navigation items */}
                     <div className="border-b border-gray-200">
-                      <button className="flex items-center justify-between w-full py-3 text-gray-900 font-medium">
+                      <button
+                        className="flex items-center justify-between w-full py-3 text-gray-900 font-medium"
+                        onClick={() => setMobileSectionExpanded(mobileSectionExpanded === 'why-rapidapps' ? null : 'why-rapidapps')}
+                      >
                         Why RapidApps
-                        <svg width="12" height="11" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg" className="ml-2">
+                        <svg
+                          width="12"
+                          height="11"
+                          viewBox="0 0 14 13"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className={`ml-2 transform transition-transform ${mobileSectionExpanded === 'why-rapidapps' ? 'rotate-180' : ''}`}
+                        >
                           <path d="M1 6C1 6 6.08629 7.2 7 12C7.91371 7.2 13 6 13 6" stroke="#1B191B" strokeWidth="2"></path>
                         </svg>
                       </button>
+
+                      <AnimatePresence>
+                        {mobileSectionExpanded === 'why-rapidapps' && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            className="overflow-hidden bg-gray-50 rounded-lg mb-2"
+                          >
+                            <div className="p-4 space-y-6">
+                              {/* Case Studies Section */}
+                              <div>
+                                <h6 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Case Studies</h6>
+                                <div className="space-y-4">
+                                  <Link href="/case-studies/fashions" className="flex items-start gap-3" onClick={() => setMobileMenuOpen(false)}>
+                                    <div className="w-12 h-12 bg-gray-200 rounded flex-shrink-0 overflow-hidden">
+                                      <img src="https://cdn.prod.website-files.com/616f0a7a027baaf59a43390b/65049ac866fad7588452d9ab_Group%205711.png" alt="" className="w-full h-full object-cover" />
+                                    </div>
+                                    <div>
+                                      <p className="text-sm font-medium text-gray-900">Fashions</p>
+                                      <p className="text-xs text-gray-500 mt-1">67% higher conversion rate</p>
+                                    </div>
+                                  </Link>
+
+                                  <Link href="/case-studies/tanishq" className="flex items-start gap-3" onClick={() => setMobileMenuOpen(false)}>
+                                    <div className="w-12 h-12 bg-gray-200 rounded flex-shrink-0 overflow-hidden">
+                                      <img src="/Tanishq2.jpg" alt="" className="w-full h-full object-cover" />
+                                    </div>
+                                    <div>
+                                      <p className="text-sm font-medium text-gray-900">Tanishq</p>
+                                      <p className="text-xs text-gray-500 mt-1">45% higher conversion rate</p>
+                                    </div>
+                                  </Link>
+
+                                  <Link href="/case-studies/cluck-and-egg" className="flex items-start gap-3" onClick={() => setMobileMenuOpen(false)}>
+                                    <div className="w-12 h-12 bg-gray-200 rounded flex-shrink-0 overflow-hidden">
+                                      <img src="/Food1.jpg" alt="" className="w-full h-full object-cover" />
+                                    </div>
+                                    <div>
+                                      <p className="text-sm font-medium text-gray-900">BÉIS 3</p>
+                                      <p className="text-xs text-gray-500 mt-1">67% higher conversion rate</p>
+                                    </div>
+                                  </Link>
+                                </div>
+                                <Link href="/case-studies" className="inline-block mt-4 text-sm font-semibold text-blue-600" onClick={() => setMobileMenuOpen(false)}>
+                                  View all case studies →
+                                </Link>
+                              </div>
+
+                              {/* Industries Section */}
+                              <div className="pt-4 border-t border-gray-200">
+                                <h6 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">By Industry</h6>
+                                <div className="space-y-2">
+                                  <Link href="/industries/fashion-apparel" className="block text-sm text-gray-700 hover:text-blue-600" onClick={() => setMobileMenuOpen(false)}>Fashion & Apparel</Link>
+                                  <Link href="/industries/beauty-cosmetics" className="block text-sm text-gray-700 hover:text-blue-600" onClick={() => setMobileMenuOpen(false)}>Beauty & Cosmetics</Link>
+                                  <Link href="/industries/food-beverage" className="block text-sm text-gray-700 hover:text-blue-600" onClick={() => setMobileMenuOpen(false)}>Food & Beverage</Link>
+                                  <Link href="/industries/health-wellness" className="block text-sm text-gray-700 hover:text-blue-600" onClick={() => setMobileMenuOpen(false)}>Health & Wellness</Link>
+                                </div>
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
 
-                    <div className="border-b border-gray-200">
-                      <button className="flex items-center justify-between w-full py-3 text-gray-900 font-medium">
-                        Platform
-                        <svg width="12" height="11" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg" className="ml-2">
-                          <path d="M1 6C1 6 6.08629 7.2 7 12C7.91371 7.2 13 6 13 6" stroke="#1B191B" strokeWidth="2"></path>
-                        </svg>
-                      </button>
-                    </div>
+
 
                     <div className="border-b border-gray-200">
                       <Link
