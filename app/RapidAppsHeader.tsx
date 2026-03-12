@@ -12,7 +12,7 @@ const navigationData = [
   { label: "Contact", href: "#contacts" },
 ];
 
-const RapidAppsHeader = () => {
+const RapidAppsHeader = ({ lightOnScroll = false }: { lightOnScroll?: boolean }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -260,12 +260,30 @@ const RapidAppsHeader = () => {
         .nav-underline-text:hover::after {
           width: 110%;
         }
+
+        /* Scrolled Light Theme Overrides */
+        .scrolled-light-theme .text-white {
+          color: #000 !important;
+        }
+        
+        .scrolled-light-theme svg path[stroke="white"] {
+          stroke: #000 !important;
+        }
+
+        .scrolled-light-theme [stroke="white"] {
+          stroke: #000 !important;
+        }
       `}</style>
 
       <header
         role="navigation"
-        className={`new-nav-menu w-nav-menu sticky top-0 z-50 transition-all duration-300 relative ${scrolled ? "bg-black/95 backdrop-blur-md border-b border-gray-800" : "bg-black border-b border-gray-800"
-          }`}
+        className={`new-nav-menu w-nav-menu sticky top-0 z-50 transition-all duration-300 relative ${
+          scrolled 
+            ? lightOnScroll 
+              ? "bg-white/95 backdrop-blur-md border-b border-gray-200 scrolled-light-theme" 
+              : "bg-black/95 backdrop-blur-md border-b border-gray-800" 
+            : "bg-black border-b border-gray-800"
+        }`}
       >
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between py-4">
@@ -549,7 +567,7 @@ const RapidAppsHeader = () => {
 
               {/* Pricing Simple Link */}
               <Link
-                href="/pricing-new"
+                href="/pricing"
                 className="new-ws-navbar-link link-only w-nav-link text-white font-medium hover:text-gray-300 owners-text nav-underline-text"
                 style={{ maxWidth: "1280px" }}
                 onClick={() => setOpenDropdown(null)}
@@ -793,7 +811,7 @@ const RapidAppsHeader = () => {
 
                     <div className="border-b border-gray-200">
                       <Link
-                        href="/pricing-new"
+                        href="/pricing"
                         className="block py-3 text-gray-900 font-medium"
                         onClick={() => setMobileMenuOpen(false)}
                       >
