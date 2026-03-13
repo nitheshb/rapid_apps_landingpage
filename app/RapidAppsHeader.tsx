@@ -8,8 +8,8 @@ import ResourcesMenu from "./ResourcesMenu";
 import PartnersMenu from "./PartnersMenu";
 
 const navigationData = [
-  { label: "Services", href: "#services" },
-  { label: "Contact", href: "#contacts" },
+  { label: "Services", href: "/#services" },
+  { label: "Contact", href: "/#contacts" },
 ];
 
 const RapidAppsHeader = ({ lightOnScroll = false }: { lightOnScroll?: boolean }) => {
